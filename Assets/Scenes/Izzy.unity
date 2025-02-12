@@ -261,7 +261,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -364,6 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe1bb3a31a3dfc40b17bae18d7b6601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiltAngle: 10
+  speed: 0.05
 --- !u!114 &1134700612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +396,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1134700611}
         m_TargetAssemblyTypeName: DroneMovement, Assembly-CSharp
         m_MethodName: OnUpDown
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -410,7 +412,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1134700611}
         m_TargetAssemblyTypeName: DroneMovement, Assembly-CSharp
         m_MethodName: OnLeftRight
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -426,7 +428,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1134700611}
         m_TargetAssemblyTypeName: DroneMovement, Assembly-CSharp
         m_MethodName: OnForwardBack
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -441,8 +443,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1134700611}
         m_TargetAssemblyTypeName: DroneMovement, Assembly-CSharp
-        m_MethodName: OnUpDown
-        m_Mode: 1
+        m_MethodName: OnRotate
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
