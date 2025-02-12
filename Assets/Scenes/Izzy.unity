@@ -364,9 +364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe1bb3a31a3dfc40b17bae18d7b6601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiltAngle: 5
+  camera: {fileID: 1134700605}
+  tiltAngle: 0.05
   speed: 0.05
-  tiltStep: 0.1
+  tiltStep: 0.01
+  rotateStep: 0.1
 --- !u!114 &1134700612
 MonoBehaviour:
   m_ObjectHideFlags: 0
