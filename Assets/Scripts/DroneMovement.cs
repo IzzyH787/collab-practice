@@ -19,6 +19,7 @@ public class DroneMovement : MonoBehaviour
 
     public float accelleration;
     public float decelleration;
+    public int targetHoop = 1;
 
     private void Update()
     {
