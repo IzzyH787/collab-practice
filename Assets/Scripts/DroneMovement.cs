@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class DroneMovement : MonoBehaviour
 {
-    public GameObject camera; 
     public float tiltAngle; //in degrees
     public float speed;
     public float riseSpeed;
@@ -20,6 +19,12 @@ public class DroneMovement : MonoBehaviour
     public float accelleration;
     public float decelleration;
     public int targetHoop = 1;
+
+    private LevelManager levelManager;
+    private void Start()
+    {
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+    }
 
     private void Update()
     {
