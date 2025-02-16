@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hoop
+  - LevelManager
   layers:
   - Default
   - TransparentFX
