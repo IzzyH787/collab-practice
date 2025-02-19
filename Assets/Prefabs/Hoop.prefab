@@ -119,6 +119,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoopNumber: 1
+  wall1: {fileID: 0}
+  wall2: {fileID: 0}
+  wall3: {fileID: 0}
+  wall4: {fileID: 0}
+  glowMaterial: {fileID: 0}
+  blackMaterial: {fileID: 0}
 --- !u!1 &6108375125265523595
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +138,7 @@ GameObject:
   - component: {fileID: 495194296916366740}
   - component: {fileID: 1399887591391704510}
   - component: {fileID: 1010575001558577085}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Hoop (1)
   m_TagString: Hoop
   m_Icon: {fileID: 0}
@@ -238,6 +244,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoopNumber: 1
+  wall1: {fileID: 0}
+  wall2: {fileID: 0}
+  wall3: {fileID: 0}
+  wall4: {fileID: 0}
+  glowMaterial: {fileID: 0}
+  blackMaterial: {fileID: 0}
 --- !u!1 &7658891507415918832
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,9 +284,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4355940028313819392}
-  - {fileID: 3253824563432021549}
   - {fileID: 4582369437254635069}
   - {fileID: 5783714285205057192}
+  - {fileID: 3253824563432021549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2662757208460243028
@@ -361,6 +373,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoopNumber: 1
+  wall1: {fileID: 6108375125265523595}
+  wall2: {fileID: 7669089317651284012}
+  wall3: {fileID: 4295226641435752938}
+  wall4: {fileID: 8076984334491559674}
+  glowMaterial: {fileID: 2100000, guid: 40e6a904c5394a54d9fc7e562b77fa57, type: 2}
+  blackMaterial: {fileID: 2100000, guid: 0554e50818a621b4ba5191fcea9a6bfd, type: 2}
 --- !u!1 &7669089317651284012
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,8 +408,8 @@ Transform:
   m_GameObject: {fileID: 7669089317651284012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.478, z: 0}
-  m_LocalScale: {x: 1.2579, y: 0.1750821, z: 1.0954951}
+  m_LocalPosition: {x: 0, y: -0.4780001, z: 0}
+  m_LocalScale: {x: 1.2579001, y: 0.17508212, z: 1.095495}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9171148996940440214}
@@ -480,6 +498,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoopNumber: 1
+  wall1: {fileID: 0}
+  wall2: {fileID: 0}
+  wall3: {fileID: 0}
+  wall4: {fileID: 0}
+  glowMaterial: {fileID: 0}
+  blackMaterial: {fileID: 0}
 --- !u!1 &8076984334491559674
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,3 +623,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoopNumber: 1
+  wall1: {fileID: 0}
+  wall2: {fileID: 0}
+  wall3: {fileID: 0}
+  wall4: {fileID: 0}
+  glowMaterial: {fileID: 0}
+  blackMaterial: {fileID: 0}

@@ -8,6 +8,14 @@ public class Hoop : MonoBehaviour
     private DroneMovement drone;
 
     private LevelManager levelManager;
+
+    public GameObject wall1;
+    public GameObject wall2;
+    public GameObject wall3;
+    public GameObject wall4;
+
+    public Material glowMaterial;
+    public Material blackMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +29,12 @@ public class Hoop : MonoBehaviour
         if (hoopNumber == drone.targetHoop)
         {
             //highlight hoop
+            wall1.GetComponent<MeshRenderer>().material = glowMaterial;
+        }
+        else
+        {
+            //unhighlight hoop
+            wall1.GetComponent<MeshRenderer>().material = blackMaterial;
         }
     }
     private void OnTriggerEnter(Collider other)
