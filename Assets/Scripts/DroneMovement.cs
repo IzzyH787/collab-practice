@@ -48,11 +48,13 @@ public class DroneMovement : MonoBehaviour
     }
     public void OnUpDown(InputAction.CallbackContext ctx)
     {
+        Debug.Log(upDownInput);
         upDownInput = ctx.ReadValue<float>(); //reads direction 
     }
     public void OnLeftRight(InputAction.CallbackContext ctx)
     {
         leftRightInput = ctx.ReadValue<float>(); //reads direction
+        //Debug.Log(leftRightInput);
     }
     public void OnForwardBack(InputAction.CallbackContext ctx)
     {
@@ -103,6 +105,7 @@ public class DroneMovement : MonoBehaviour
     {
         //move drone up/down
         //gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (upDownInput * speed), gameObject.transform.position.z);
+        Debug.Log(upDownInput);
         if(upDownInput != 0)
         {
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, (upDownInput * riseSpeed), gameObject.GetComponent<Rigidbody>().velocity.z);
