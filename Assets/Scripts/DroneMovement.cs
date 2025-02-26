@@ -130,6 +130,11 @@ public class DroneMovement : MonoBehaviour
         else if (gameObject.GetComponent<Rigidbody>().rotation.x != 0 && forwardBackInput == 0)
         {
             //make suretilt is corrected in correct direction
+            if (gameObject.GetComponent<Rigidbody>().rotation.x > -0.06 && gameObject.GetComponent<Rigidbody>().rotation.x  < 0.06)
+            {
+                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(0, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
+
+            }
             if (gameObject.GetComponent<Rigidbody>().rotation.x < 0)
             {
                 gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x + tiltStep, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
