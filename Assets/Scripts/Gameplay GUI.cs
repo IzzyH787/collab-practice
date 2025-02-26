@@ -52,7 +52,7 @@ public class GameplayGUI : MonoBehaviour
         if (gameStart)
         {
             timerValue = levelManagerScript.timer;
-            if (!gameOver && timerValue < 7)
+            if (!gameOver && timerValue < 600)
             {
                 UpdateTimerValue();
             }

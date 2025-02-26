@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8068242207916056246}
   - component: {fileID: 7887229612164182206}
   - component: {fileID: 1195218191385357270}
-  - component: {fileID: 803684482359437853}
   m_Layer: 0
   m_Name: Hoop (3)
   m_TagString: Hoop
@@ -106,25 +105,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &803684482359437853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295226641435752938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c45a10e06569e248bfca18f51f59ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoopNumber: 1
-  wall1: {fileID: 0}
-  wall2: {fileID: 0}
-  wall3: {fileID: 0}
-  wall4: {fileID: 0}
-  glowMaterial: {fileID: 0}
-  blackMaterial: {fileID: 0}
 --- !u!1 &6108375125265523595
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +117,6 @@ GameObject:
   - component: {fileID: 8989664583170397351}
   - component: {fileID: 495194296916366740}
   - component: {fileID: 1399887591391704510}
-  - component: {fileID: 1010575001558577085}
   m_Layer: 1
   m_Name: Hoop (1)
   m_TagString: Hoop
@@ -231,25 +210,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1010575001558577085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6108375125265523595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c45a10e06569e248bfca18f51f59ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoopNumber: 1
-  wall1: {fileID: 0}
-  wall2: {fileID: 0}
-  wall3: {fileID: 0}
-  wall4: {fileID: 0}
-  glowMaterial: {fileID: 0}
-  blackMaterial: {fileID: 0}
 --- !u!1 &7658891507415918832
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +351,6 @@ GameObject:
   - component: {fileID: 7681552076360089589}
   - component: {fileID: 2409267286877823715}
   - component: {fileID: 1956569302050738479}
-  - component: {fileID: 2981621925728875501}
   m_Layer: 0
   m_Name: Hoop (2)
   m_TagString: Hoop
@@ -485,25 +444,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2981621925728875501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7669089317651284012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c45a10e06569e248bfca18f51f59ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoopNumber: 1
-  wall1: {fileID: 0}
-  wall2: {fileID: 0}
-  wall3: {fileID: 0}
-  wall4: {fileID: 0}
-  glowMaterial: {fileID: 0}
-  blackMaterial: {fileID: 0}
 --- !u!1 &8076984334491559674
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +456,6 @@ GameObject:
   - component: {fileID: 8255875729625599970}
   - component: {fileID: 4727969575848846194}
   - component: {fileID: 7006646402462100829}
-  - component: {fileID: 1498566786820281301}
   m_Layer: 0
   m_Name: Hoop (4)
   m_TagString: Hoop
@@ -610,22 +549,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1498566786820281301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076984334491559674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c45a10e06569e248bfca18f51f59ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoopNumber: 1
-  wall1: {fileID: 0}
-  wall2: {fileID: 0}
-  wall3: {fileID: 0}
-  wall4: {fileID: 0}
-  glowMaterial: {fileID: 0}
-  blackMaterial: {fileID: 0}
