@@ -85,12 +85,12 @@ public class DroneMovement : MonoBehaviour
             //make suretilt is corrected in correct direction
             if (gameObject.GetComponent<Rigidbody>().rotation.z < 0)
             {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z + tiltStep, 1.0f);
+                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z + tiltStep, 1.0f).normalized;
 
             }
             else
             {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z - tiltStep, 1.0f);
+                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z - tiltStep, 1.0f).normalized;
 
             }
             //check if angle needs zeroing 
