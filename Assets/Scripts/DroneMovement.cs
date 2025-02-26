@@ -19,10 +19,12 @@ public class DroneMovement : MonoBehaviour
     public float accelleration;
     public float decelleration;
     public int targetHoop = 1;
+    Rigidbody rb;
 
     private LevelManager levelManager;
     private void Start()
     {
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
     }
 
@@ -32,6 +34,11 @@ public class DroneMovement : MonoBehaviour
         MoveUpDown();
         MoveLeftRight();
         MoveForwardBack();
+        //check if no input then zero spinning
+        if (leftRightInput == 0 && forwardBackInput == 0 && upDownInput == 0)
+        {
+
+        }
         //Rotate();
         //check if moving up
         if (gameObject.GetComponent<Rigidbody>().velocity.y > 0)
@@ -45,6 +52,16 @@ public class DroneMovement : MonoBehaviour
 
         }
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Stop the rotation by resetting angular velocity
+        
+        rb.angularVelocity = Vector3.zero;  // This stops any spinning
+
+        // Optionally, reset rotation to a desired fixed value (like upright)
+        //gameObject.transform.rotation = Quaternion.Euler(0, 0, 0); // Reset to upright position
     }
     public void OnUpDown(InputAction.CallbackContext ctx)
     {
@@ -85,12 +102,12 @@ public class DroneMovement : MonoBehaviour
             //make suretilt is corrected in correct direction
             if (gameObject.GetComponent<Rigidbody>().rotation.z < 0)
             {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z + tiltStep, 1.0f);
+                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z + tiltStep, 1.0f).normalized;
 
             }
             else
             {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z - tiltStep, 1.0f);
+                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z - tiltStep, 1.0f).normalized;
 
             }
             //check if angle needs zeroing 
@@ -130,6 +147,11 @@ public class DroneMovement : MonoBehaviour
         else if (gameObject.GetComponent<Rigidbody>().rotation.x != 0 && forwardBackInput == 0)
         {
             //make suretilt is corrected in correct direction
+            if (gameObject.GetComponent<Rigidbody>().rotation.x > -0.06 && gameObject.GetComponent<Rigidbody>().rotation.x  < 0.06)
+            {
+                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(0, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
+
+            }
             if (gameObject.GetComponent<Rigidbody>().rotation.x < 0)
             {
                 gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x + tiltStep, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
