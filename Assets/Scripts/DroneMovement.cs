@@ -17,7 +17,7 @@ public class DroneMovement : MonoBehaviour
     float upDownAxis, forwardBackwardAxis, leftRightAxis;
     float forwardBackAngle = 0, leftRightAngle = 0;
 
-    public float speed = 1.3f, angle = 25;
+    public float speed, angle, riseMultiplier, slowMultiplier, maxSpeed;
     //Animator animator
     bool isOnGround = false;
     private void Start()
@@ -33,18 +33,27 @@ public class DroneMovement : MonoBehaviour
         //if moving up
         if (upDownInput > 0)
         {
-            upDownAxis = 10 * speed;
+            upDownAxis = riseMultiplier * upDownInput;
             //animator.SetBool("Fly", true));
         }
         //if moving down
         else if (upDownInput < 0)
         {
-            upDownAxis = -8;
+            upDownAxis = riseMultiplier * upDownInput;
             //animator.SetBool("Fly", false));
         }
         else
         {
-            upDownAxis -= Mathf.Lerp(upDownAxis, 0, Time.deltaTime);
+            if (Mathf.Abs(rb.velocity.y) > 0.1)
+            {
+                upDownAxis = 0;
+                rb.velocity = new Vector3(rb.velocity.x, Mathf.Lerp(rb.velocity.y, 0, Time.deltaTime), rb.velocity.z) * slowMultiplier ;
+            }
+            else
+            {
+                upDownAxis = 0;
+            }
+            // upDownAxis -= Mathf.Lerp(upDownAxis, 0, Time.deltaTime);
             //animator.SetBool("Fly", false));
         }
         #endregion
@@ -60,7 +69,7 @@ public class DroneMovement : MonoBehaviour
         else if (forwardBackInput < 0)
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
-            forwardBackwardAxis = -speed;
+            forwardBackwardAxis = speed;
             //animator.SetBool("Fly", true);
         }
         //no input
@@ -81,7 +90,7 @@ public class DroneMovement : MonoBehaviour
         else if (leftRightInput < 0)
         {
             leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
-            leftRightAxis = -speed;
+            leftRightAxis = speed;
             //animator.SetBool("Fly", true);
         }
         //no input
@@ -107,7 +116,7 @@ public class DroneMovement : MonoBehaviour
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
             forwardBackwardAxis = 0.5f * speed;
-            leftRightAxis = -0.5f * speed;
+            leftRightAxis = 0.5f * speed;
         }
         #endregion
         #region backRightMovement
@@ -115,7 +124,7 @@ public class DroneMovement : MonoBehaviour
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
-            forwardBackwardAxis = -0.5f * speed;
+            forwardBackwardAxis = 0.5f * speed;
             leftRightAxis = 0.5f * speed;
         }
         #endregion
@@ -124,8 +133,8 @@ public class DroneMovement : MonoBehaviour
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
-            forwardBackwardAxis = -0.5f * speed;
-            leftRightAxis = -0.5f;
+            forwardBackwardAxis = 0.5f * speed;
+            leftRightAxis = 0.5f;
         }
         #endregion
 
@@ -139,7 +148,21 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddRelativeForce(leftRightAxis, upDownAxis, forwardBackwardAxis);
+        rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis, forwardBackwardAxis * forwardBackInput);
+
+        //cap speed
+        if (rb.velocity.x > maxSpeed)
+        {
+            rb.velocity = new Vector3(maxSpeed, rb.velocity.y, rb.velocity.z);
+        }
+        if (rb.velocity.y > maxSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, maxSpeed, rb.velocity.z);
+        }
+        if (rb.velocity.z > maxSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeed);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
