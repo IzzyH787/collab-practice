@@ -5,63 +5,149 @@ using UnityEngine.InputSystem;
 
 public class DroneMovement : MonoBehaviour
 {
-    public float tiltAngle; //in degrees
-    public float speed;
-    public float riseSpeed;
-    public float tiltStep;
-    public float rotateStep;
-
     float upDownInput = 0.0f;
     float leftRightInput = 0.0f;
     float forwardBackInput = 0.0f;
     float rotateInput = 0.0f;
-
-    public float accelleration;
-    public float decelleration;
+    
     public int targetHoop = 1;
     Rigidbody rb;
-
     private LevelManager levelManager;
+
+    float upDownAxis, forwardBackwardAxis, leftRightAxis;
+    float forwardBackAngle = 0, leftRightAngle = 0;
+
+    public float speed = 1.3f, angle = 25;
+    //Animator animator
+    bool isOnGround = false;
     private void Start()
     {
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        //animator = gameObject.GetComponent<Animator>();
+    }
+
+    void Controls()
+    {
+        #region upDownMovement
+        //if moving up
+        if (upDownInput > 0)
+        {
+            upDownAxis = 10 * speed;
+            //animator.SetBool("Fly", true));
+        }
+        //if moving down
+        else if (upDownInput < 0)
+        {
+            upDownAxis = -8;
+            //animator.SetBool("Fly", false));
+        }
+        else
+        {
+            upDownAxis -= Mathf.Lerp(upDownAxis, 0, Time.deltaTime);
+            //animator.SetBool("Fly", false));
+        }
+        #endregion
+        #region forwardBackMovement
+        //if moving forward
+        if (forwardBackInput > 0)
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
+            forwardBackwardAxis = speed;
+            //animator.SetBool("Fly", true);
+        }
+        //if moving backward
+        else if (forwardBackInput < 0)
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
+            forwardBackwardAxis = -speed;
+            //animator.SetBool("Fly", true);
+        }
+        //no input
+        else
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, 0, Time.deltaTime);
+            forwardBackwardAxis = 0;
+        }
+        #endregion
+        #region leftRightMovement
+        if(leftRightInput > 0)
+        {
+            leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
+            leftRightAxis = speed;
+            //animator.SetBool("Fly", true);
+        }
+        //if moving backward
+        else if (leftRightInput < 0)
+        {
+            leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
+            leftRightAxis = -speed;
+            //animator.SetBool("Fly", true);
+        }
+        //no input
+        else
+        {
+            leftRightAngle = Mathf.Lerp(leftRightAngle, 0, Time.deltaTime);
+            leftRightAxis = 0;
+        }
+        #endregion
+
+        #region forwardRightMovement
+        if (forwardBackInput > 0 && leftRightInput > 0)
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
+            leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
+            forwardBackwardAxis = 0.5f * speed;
+            leftRightAxis = 0.5f;
+        }
+        #endregion
+        #region forwardLeftMovement
+        if (forwardBackInput > 0 && leftRightInput < 0)
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
+            leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
+            forwardBackwardAxis = 0.5f * speed;
+            leftRightAxis = -0.5f * speed;
+        }
+        #endregion
+        #region backRightMovement
+        if (forwardBackInput < 0 && leftRightInput > 0)
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
+            leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
+            forwardBackwardAxis = -0.5f * speed;
+            leftRightAxis = 0.5f * speed;
+        }
+        #endregion
+        #region backLeftMovement
+        if (forwardBackInput < 0 && leftRightInput < 0)
+        {
+            forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
+            leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
+            forwardBackwardAxis = -0.5f * speed;
+            leftRightAxis = -0.5f;
+        }
+        #endregion
+
     }
 
     private void Update()
     {
-        //move drone 
-        MoveUpDown();
-        MoveLeftRight();
-        MoveForwardBack();
-        //check if no input then zero spinning
-        if (leftRightInput == 0 && forwardBackInput == 0 && upDownInput == 0)
-        {
+        Controls();
+        transform.localEulerAngles = Vector3.back * leftRightAngle + Vector3.right * forwardBackAngle;
+    }
 
-        }
-        //Rotate();
-        //check if moving up
-        if (gameObject.GetComponent<Rigidbody>().velocity.y > 0)
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, gameObject.GetComponent<Rigidbody>().velocity.y + decelleration, gameObject.GetComponent<Rigidbody>().velocity.z);
-        }
-        //check if falling with no input
-        else if (gameObject.GetComponent<Rigidbody>().velocity.y < 0 && upDownInput == 0)
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, 0.0f, gameObject.GetComponent<Rigidbody>().velocity.z);
-
-        }
-
+    private void FixedUpdate()
+    {
+        rb.AddRelativeForce(leftRightAxis, upDownAxis, forwardBackwardAxis);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Stop the rotation by resetting angular velocity
-        
-        rb.angularVelocity = Vector3.zero;  // This stops any spinning
-
-        // Optionally, reset rotation to a desired fixed value (like upright)
-        //gameObject.transform.rotation = Quaternion.Euler(0, 0, 0); // Reset to upright position
+        if (collision.gameObject.tag == "Ground")
+        {
+            isOnGround = true;
+        }
     }
     public void OnUpDown(InputAction.CallbackContext ctx)
     {
@@ -82,7 +168,7 @@ public class DroneMovement : MonoBehaviour
         rotateInput = ctx.ReadValue<float>(); //reads direction
     }
 
-    void MoveLeftRight()
+   /* void MoveLeftRight()
     {
         //move drone left/right
         //gameObject.transform.position = new Vector3(gameObject.transform.position.x + (leftRightInput * speed), gameObject.transform.position.y, gameObject.transform.position.z);
@@ -177,6 +263,6 @@ public class DroneMovement : MonoBehaviour
 
         }
 
-    }
+    }*/
 
 }
