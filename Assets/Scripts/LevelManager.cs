@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -29,6 +31,9 @@ public class LevelManager : MonoBehaviour
     public GameObject continueBtn;
     public GameObject closeSettingsBtn;
 
+    public GameObject timerDisplay;
+    public Text finalTimeDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +55,7 @@ public class LevelManager : MonoBehaviour
     {
         //hide start screen
         startScreen.SetActive(false);
+        levelOverScreen.SetActive(false);
         //open level selector
         levelSelector.SetActive(true);
         //set selected button to level 1
@@ -140,5 +146,16 @@ public class LevelManager : MonoBehaviour
         pausePanel.SetActive(true);
         //set deault button to resume
         eventSystem.firstSelectedGameObject = resumeBtn;
+    }
+    public void OnLevelComplete()
+    {
+        Time.timeScale = 0; //pause timer
+        hud.SetActive(false); //hide hud
+                                           //show level over screen
+        levelOverScreen.SetActive(true);
+        //set default button
+        eventSystem.firstSelectedGameObject = continueBtn;
+        //display completion time on screen
+        finalTimeDisplay.text = timerDisplay.GetComponent<TextMeshPro>().text;
     }
 }

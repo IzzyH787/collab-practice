@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/RRG_Level1.unity
-    guid: b6ae0cc0fe6f34f40966f919dbda6b84
+    path: Assets/Scenes/IHA_Menu.unity
+    guid: cff6f8f48ca18944cb46b136785057d7
+  - enabled: 1
+    path: Assets/Scenes/IHA_TestLevel1.unity
+    guid: 8f428bebca431c34793a327fcbad5f46
+  - enabled: 1
+    path: Assets/Scenes/IHA_TestLevel2.unity
+    guid: 7cf0b02c716bc85499ebe8a0d011de44
   m_configObjects: {}

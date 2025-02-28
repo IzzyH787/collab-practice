@@ -45,7 +45,8 @@ public class Hoop : MonoBehaviour
             //check if final hoop in track
             if (hoopNumber == levelManager.lastHoopNumber)
             {
-                Debug.Log("Level WIn");
+                Debug.Log("Level Win");
+                levelManager.OnLevelComplete();
             }
             else
             {
