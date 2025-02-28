@@ -266,7 +266,7 @@
                 {
                     "name": "positive",
                     "id": "ac32139c-d454-4299-90a9-2950d2dea43d",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

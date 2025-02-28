@@ -15,7 +15,7 @@ public class DroneMovement : MonoBehaviour
     private LevelManager levelManager;
 
     float upDownAxis, forwardBackwardAxis, leftRightAxis;
-    float forwardBackAngle = 0, leftRightAngle = 0;
+    float forwardBackAngle = 0, leftRightAngle = 0, yAxisAngle = 0;
 
     public float speed, angle, riseMultiplier, slowMultiplier, maxSpeed;
     //Animator animator
@@ -138,12 +138,17 @@ public class DroneMovement : MonoBehaviour
         }
         #endregion
 
+
+        //rotate about y axis
+        yAxisAngle = Mathf.Lerp(yAxisAngle, yAxisAngle + (90 * rotateInput), Time.deltaTime);
     }
+
+    
 
     private void Update()
     {
         Controls();
-        transform.localEulerAngles = Vector3.back * leftRightAngle + Vector3.right * forwardBackAngle;
+        transform.localEulerAngles = Vector3.back * leftRightAngle + Vector3.right * forwardBackAngle + Vector3.up * yAxisAngle;
     }
 
     private void FixedUpdate()
