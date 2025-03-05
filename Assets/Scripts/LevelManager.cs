@@ -33,10 +33,12 @@ public class LevelManager : MonoBehaviour
 
     public GameObject timerDisplay;
     public Text finalTimeDisplay;
+    float startTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        startTime = Time.time;
         //hide all  uis
         startScreen.SetActive(false);
         levelSelector.SetActive(false);
@@ -156,6 +158,19 @@ public class LevelManager : MonoBehaviour
         //set default button
         eventSystem.firstSelectedGameObject = continueBtn;
         //display completion time on screen
-        finalTimeDisplay.text = timerDisplay.GetComponent<TextMeshPro>().text;
+        float completionTime = Time.time - startTime;
+        int minutes = (int)(completionTime / 60);
+        int seconds = (int)(completionTime - (minutes * 60));
+        string displayText = "";
+        if (seconds > 9)
+        {
+            displayText = minutes + ":" + seconds;
+        }
+        else
+        {
+            displayText = minutes + ":0" + seconds;
+        }
+        finalTimeDisplay.text = displayText;
+
     }
 }
