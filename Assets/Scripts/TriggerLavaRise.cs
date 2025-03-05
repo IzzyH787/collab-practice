@@ -19,7 +19,12 @@ public class TriggerLavaRise : MonoBehaviour
     {
         if (triggerLavaEvent == true)
         {
-            lava.transform.position += new Vector3(0, 2, 0) * Time.deltaTime;
+            if (lava.transform.position.y <= 30.5f)
+            {
+                lava.transform.position += new Vector3(0, 1, 0) * Time.deltaTime;
+                lava.transform.eulerAngles += new Vector3(0, 2, 0) * Time.deltaTime;
+            }
+            
         }
     }
 
