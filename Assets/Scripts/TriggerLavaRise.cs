@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TriggerLavaRise : MonoBehaviour
 {
-    bool triggerLavaEvent;
+    private bool triggerLavaEvent;
 
     [SerializeField] private GameObject lava;
+    [SerializeField] private GameObject warning;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +25,13 @@ public class TriggerLavaRise : MonoBehaviour
             {
                 lava.transform.position += new Vector3(0, 1, 0) * Time.deltaTime;
                 lava.transform.eulerAngles += new Vector3(0, 2, 0) * Time.deltaTime;
+                warning.SetActive(true);
             }
-            
+
+            else
+            {
+                warning.SetActive(false);
+            }
         }
     }
 
