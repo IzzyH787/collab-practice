@@ -4220,10 +4220,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5671624474267697088, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2023865914913611993}
   m_SourcePrefab: {fileID: 100100000, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
 --- !u!4 &1888182921785980301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3877477493169463989, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
   m_PrefabInstance: {fileID: 3457565365275662136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7011564800690891000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5671624474267697088, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
+  m_PrefabInstance: {fileID: 3457565365275662136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023865914913611993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011564800690891000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 2
+  m_Damping: 10
+  m_DampingWhenOccluded: 10
+  m_OptimalTargetDistance: 0
