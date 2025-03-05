@@ -16,6 +16,8 @@ public class Hoop : MonoBehaviour
 
     public Material glowMaterial;
     public Material blackMaterial;
+
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,11 @@ public class Hoop : MonoBehaviour
             wall1.GetComponent<MeshRenderer>().material = blackMaterial;
         }
     }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         //if colliding with player and is the target hoop 
@@ -45,11 +52,13 @@ public class Hoop : MonoBehaviour
             //check if final hoop in track
             if (hoopNumber == levelManager.lastHoopNumber)
             {
+                audioManager.PlayAudio(audioManager.Leveldone);
                 Debug.Log("Level Win");
                 levelManager.OnLevelComplete();
             }
             else
             {
+                audioManager.PlayAudio(audioManager.Hoop);
                 drone.targetHoop++;
                 Debug.Log("Hoop Reached");
             }

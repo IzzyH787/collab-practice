@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hoop
   - LevelManager
+  - AudioManager
   layers:
   - Default
   - TransparentFX
