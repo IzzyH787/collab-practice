@@ -9,7 +9,7 @@ public class DroneMovement : MonoBehaviour
     float leftRightInput = 0.0f;
     float forwardBackInput = 0.0f;
     float rotateInput = 0.0f;
-    
+    public float riseSpeed = 8;
     public int targetHoop = 1;
     Rigidbody rb;
     private LevelManager levelManager;

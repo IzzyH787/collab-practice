@@ -22,6 +22,7 @@ public class Hoop : MonoBehaviour
     void Start()
     {
         drone = GameObject.FindGameObjectWithTag("Player").GetComponent<DroneMovement>();
+        Debug.Log(drone);
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
     }
 

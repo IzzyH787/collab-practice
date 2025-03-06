@@ -97,7 +97,7 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 1; //make timer continue
         //load level 3
-
+        SceneManager.LoadScene(3);
         //set default button to pause
     }
 
