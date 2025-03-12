@@ -11,6 +11,7 @@ public class DroneMovement : MonoBehaviour
     float rotateInput = 0.0f;
     public float riseSpeed = 8;
     public int targetHoop = 1;
+    public float gravityForce;
     Rigidbody rb;
     private LevelManager levelManager;
 
@@ -23,6 +24,7 @@ public class DroneMovement : MonoBehaviour
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         //animator = gameObject.GetComponent<Animator>();
     }
@@ -153,7 +155,7 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis, forwardBackwardAxis * forwardBackInput);
+        rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
 
         //cap speed
         if (rb.velocity.x > maxSpeed)
@@ -196,101 +198,5 @@ public class DroneMovement : MonoBehaviour
         rotateInput = ctx.ReadValue<float>(); //reads direction
     }
 
-   /* void MoveLeftRight()
-    {
-        //move drone left/right
-        //gameObject.transform.position = new Vector3(gameObject.transform.position.x + (leftRightInput * speed), gameObject.transform.position.y, gameObject.transform.position.z);
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(leftRightInput * riseSpeed, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z);
-
-          
-        //check if input and not fully rotated either way
-        if (leftRightInput != 0 && gameObject.GetComponent<Rigidbody>().rotation.z < tiltAngle && gameObject.GetComponent<Rigidbody>().rotation.z > -tiltAngle)
-        {
-            gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z - (tiltStep * leftRightInput), 1.0f);
-
-        }
-
-        //if drone is tilted but left/right input is not active
-        else if (gameObject.GetComponent<Rigidbody>().rotation.z != 0 && leftRightInput == 0)
-        {
-            //make suretilt is corrected in correct direction
-            if (gameObject.GetComponent<Rigidbody>().rotation.z < 0)
-            {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z + tiltStep, 1.0f).normalized;
-
-            }
-            else
-            {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z - tiltStep, 1.0f).normalized;
-
-            }
-            //check if angle needs zeroing 
-            if (gameObject.GetComponent<Rigidbody>().rotation.z < tiltStep && gameObject.GetComponent<Rigidbody>().rotation.z > -tiltStep)
-            {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y, 0.0f, 1.0f);
-
-            }
-        }
-    }
-    void MoveUpDown()
-    {
-        //move drone up/down
-        //gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (upDownInput * speed), gameObject.transform.position.z);
-        //Debug.Log(upDownInput);
-        if(upDownInput != 0)
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, (upDownInput * riseSpeed), gameObject.GetComponent<Rigidbody>().velocity.z);
-
-        }
-    }
-    void MoveForwardBack()
-    {
-        //move drone left/right
-        //gameObject.transform.position = new Vector3(gameObject.transform.position.x , gameObject.transform.position.y, gameObject.transform.position.z + (forwardBackInput * speed));
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, gameObject.GetComponent<Rigidbody>().velocity.y, forwardBackInput * riseSpeed);
-
-
-        //check if input and not fully rotated either way
-        if (forwardBackInput != 0 && gameObject.GetComponent<Rigidbody>().rotation.x < tiltAngle && gameObject.GetComponent<Rigidbody>().rotation.x > -tiltAngle)
-        {
-            gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x + (tiltStep * forwardBackInput), gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z , 1.0f);
-
-        }
-
-        //if drone is tilted but left/right input is not active
-        else if (gameObject.GetComponent<Rigidbody>().rotation.x != 0 && forwardBackInput == 0)
-        {
-            //make suretilt is corrected in correct direction
-            if (gameObject.GetComponent<Rigidbody>().rotation.x > -0.06 && gameObject.GetComponent<Rigidbody>().rotation.x  < 0.06)
-            {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(0, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
-
-            }
-            if (gameObject.GetComponent<Rigidbody>().rotation.x < 0)
-            {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x + tiltStep, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
-
-            }
-            else
-            {
-                gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x - tiltStep, gameObject.GetComponent<Rigidbody>().rotation.y, gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
-
-            }
-
-        }
-    }
-    void Rotate()
-    {
-        //only rotate if input
-        if (rotateInput != 0)
-        {
-            //rotate drone
-            gameObject.GetComponent<Rigidbody>().rotation = new Quaternion(gameObject.GetComponent<Rigidbody>().rotation.x, gameObject.GetComponent<Rigidbody>().rotation.y + (rotateStep * rotateInput), gameObject.GetComponent<Rigidbody>().rotation.z, 1.0f);
-            //correct x and z rotation of  camera
-            //camera.gameObject.transform.rotation = new Quaternion(camera.gameObject.transform.rotation.x - gameObject.transform.rotation.x, camera.gameObject.transform.rotation.y, camera.gameObject.transform.rotation.z - gameObject.transform.rotation.z, 1.0f);
-
-        }
-
-    }*/
 
 }
