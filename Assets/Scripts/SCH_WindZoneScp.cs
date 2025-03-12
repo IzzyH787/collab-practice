@@ -10,12 +10,17 @@ public class SCH_WindZoneScp : MonoBehaviour
     public float windDirectionY = 0;
     public float windDirectionZ = 0;
     private Vector3 windDirection;
-   
+
     public GameObject droneObj; //The drone object
     public float windMagnitude = 3f; //Magnitude of the wind
 
+    public AudioClip windBlowingSound;
+    public GameObject audioManagerObj;
+    private AudioManager audioManagerScp;
+
     private Rigidbody droneRB; //Rigidbody of the drone
     private bool insideWindArea = false; //Whether the drone is inside the wind area
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,7 @@ public class SCH_WindZoneScp : MonoBehaviour
         windDirection.x = windDirectionX;
         windDirection.y = windDirectionY;
         windDirection.z = windDirectionZ;
+        audioManagerScp = audioManagerObj.GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -32,6 +38,7 @@ public class SCH_WindZoneScp : MonoBehaviour
         {
             Debug.Log("Collision enter.");
             insideWindArea = true;
+            audioManagerScp.PlayAudio(windBlowingSound);
         }
     }
 

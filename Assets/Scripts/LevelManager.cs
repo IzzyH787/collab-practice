@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 {
     public int lastHoopNumber;
     public float timer = 0;
+    public int timeQualifiedToGetDiscount = 120;
 
     //ui screens
     public GameObject sceneStartPanel;
@@ -30,6 +31,9 @@ public class LevelManager : MonoBehaviour
     public GameObject resumeBtn;
     public GameObject continueBtn;
     public GameObject closeSettingsBtn;
+    public GameObject buyTicketBtn;
+    public Text discountReminder;
+    public GameObject discounBtn;
 
     public GameObject timerDisplay;
     public Text finalTimeDisplay;
@@ -172,5 +176,18 @@ public class LevelManager : MonoBehaviour
         }
         finalTimeDisplay.text = displayText;
 
+        string discountReminderText = "";
+        //Change the discount text if the lap is completed under two minutes
+        if (completionTime <= timeQualifiedToGetDiscount)
+        {
+            discountReminderText = "Finish the lap under two minutes? ";
+            discounBtn.SetActive(true);
+        }
+        else
+        {
+            discountReminderText = "Finish the lap in two minutes and get a discount!";
+            discounBtn.SetActive(false);
+        }
+        discountReminder.text = discountReminderText;
     }
 }
