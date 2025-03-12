@@ -6,6 +6,8 @@ using UnityEngine;
 public class TriggerLavaRise : MonoBehaviour
 {
     private bool triggerLavaEvent;
+    private float warningDisplayTime;
+    private bool warned;
 
     [SerializeField] private GameObject lava;
     [SerializeField] private GameObject warning;
@@ -26,9 +28,15 @@ public class TriggerLavaRise : MonoBehaviour
                 lava.transform.position += new Vector3(0, 1, 0) * Time.deltaTime;
                 lava.transform.eulerAngles += new Vector3(0, 2, 0) * Time.deltaTime;
                 warning.SetActive(true);
+                if (!warned)
+                {
+                    warningDisplayTime = Time.time;
+                    warned = true;
+                }
+                
             }
-
-            else
+            //die warning after 3s
+            if (Time.time - warningDisplayTime > 3.0f)
             {
                 warning.SetActive(false);
             }
