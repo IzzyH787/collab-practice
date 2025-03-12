@@ -7,6 +7,7 @@ public class FireObstacle : MonoBehaviour
 {
     public ParticleSystem particle;
     public DroneMovement drone;
+    [SerializeField] private GameObject slowed;
 
     private float delay = 1.5f;
     private bool movementSlow = false;
@@ -19,25 +20,29 @@ public class FireObstacle : MonoBehaviour
 
     void Update()
     {
-        //when player clicks button hides restart button.
+        //when player collides with particle
         if (movementSlow == true)
         {
-            //countdown
+            //countdown start (decrease speed)
             if (delay > 0)
             {
                 delay -= Time.deltaTime;
-                drone.speed = 0.2f;
+                drone.speed = 0.5f;
                 drone.riseSpeed = 5f;
+                slowed.SetActive(true);
             }
 
-            //when below 0 load scene "game"
+            //countdown finish (reset speed)
             if (delay < 0)
             {
-                drone.speed = 0.5f;
+                drone.speed = 10f;
                 drone.riseSpeed = 8f;
                 movementSlow = false;
+                slowed.SetActive(false);
                 delay = 1.5f;
             }
+
+            Debug.Log(drone.speed);
         }
     }
 
@@ -45,11 +50,12 @@ public class FireObstacle : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
             movementSlow = true;
-
-            Debug.Log(drone.speed);
         }
-            
+    }
+
+    private void OnParticleTrigger()
+    {
+        Debug.Log("particle");
     }
 }
