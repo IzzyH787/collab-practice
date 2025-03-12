@@ -15,6 +15,10 @@ public class DroneMovement : MonoBehaviour
     Rigidbody rb;
     private LevelManager levelManager;
 
+    public GameObject propeller1;
+    public GameObject propeller2;
+    public float maxRotSpeed;
+
     float upDownAxis, forwardBackwardAxis, leftRightAxis;
     float forwardBackAngle = 0, leftRightAngle = 0, yAxisAngle = 0;
 
@@ -151,6 +155,8 @@ public class DroneMovement : MonoBehaviour
     {
         Controls();
         transform.localEulerAngles = Vector3.back * leftRightAngle + Vector3.right * forwardBackAngle + Vector3.up * yAxisAngle;
+        propeller1.gameObject.transform.localEulerAngles += Vector3.up * maxRotSpeed * upDownAxis;
+        propeller2.gameObject.transform.localEulerAngles += Vector3.up * maxRotSpeed * upDownAxis;
     }
 
     private void FixedUpdate()
