@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4688539194051282654, guid: df86778ad724ccf40a57fc75fe6e2777, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 9470cc0a64d0a8644be82066a3def658, type: 3}
     - target: {fileID: 8256567026429435169, guid: df86778ad724ccf40a57fc75fe6e2777, type: 3}
       propertyPath: sceneStartBtn
       value: 
