@@ -44,5 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d782df973f1624ab97ada5b41c01a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastHoopNumber: 2
+  lastHoopNumber: 17
   timer: 0
+  timeQualifiedToGetDiscount: 120
+  sceneStartPanel: {fileID: 0}
+  startScreen: {fileID: 0}
+  levelSelector: {fileID: 0}
+  hud: {fileID: 0}
+  pausePanel: {fileID: 0}
+  settingsPanel: {fileID: 0}
+  levelOverScreen: {fileID: 0}
+  eventSystem: {fileID: 0}
+  sceneStartBtn: {fileID: 0}
+  playBtn: {fileID: 0}
+  level1Btn: {fileID: 0}
+  pauseBtn: {fileID: 0}
+  resumeBtn: {fileID: 0}
+  continueBtn: {fileID: 0}
+  closeSettingsBtn: {fileID: 0}
+  buyTicketBtn: {fileID: 0}
+  discountReminder: {fileID: 0}
+  discounBtn: {fileID: 0}
+  timerDisplay: {fileID: 0}
+  finalTimeDisplay: {fileID: 0}

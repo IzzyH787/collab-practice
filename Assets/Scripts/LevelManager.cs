@@ -5,12 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEditor.Search;
 
 public class LevelManager : MonoBehaviour
 {
     public int lastHoopNumber;
     public float timer = 0;
-    public int timeQualifiedToGetDiscount = 120;
+    public int timeLimitForAchievement = 120;
 
     //ui screens
     public GameObject sceneStartPanel;
@@ -20,6 +21,12 @@ public class LevelManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject settingsPanel;
     public GameObject levelOverScreen;
+    public GameObject startScreenOptionPanel;
+
+    public GameObject achievementPanel;
+    public GameObject levelIntro1;
+    public GameObject levelIntro2;
+    public GameObject levelIntro3;
 
     public EventSystem eventSystem;
 
@@ -31,12 +38,10 @@ public class LevelManager : MonoBehaviour
     public GameObject resumeBtn;
     public GameObject continueBtn;
     public GameObject closeSettingsBtn;
-    public GameObject buyTicketBtn;
-    public Text discountReminder;
-    public GameObject discounBtn;
 
     public GameObject timerDisplay;
     public Text finalTimeDisplay;
+    public bool showInGamePanel = true;
     float startTime = 0;
 
     // Start is called before the first frame update
@@ -44,14 +49,14 @@ public class LevelManager : MonoBehaviour
     {
         startTime = Time.time;
         //hide all  uis
-        startScreen.SetActive(false);
+        startScreen.SetActive(!showInGamePanel);
         levelSelector.SetActive(false);
         hud.SetActive(false);
         pausePanel.SetActive(false);
         settingsPanel.SetActive(false);
         levelOverScreen.SetActive(false);
         //show scenes start panel
-        sceneStartPanel.SetActive(true);
+        sceneStartPanel.SetActive(showInGamePanel);
         //auto selectplay button
         eventSystem.firstSelectedGameObject = sceneStartBtn;
     }
@@ -62,11 +67,15 @@ public class LevelManager : MonoBehaviour
         //hide start screen
         startScreen.SetActive(false);
         levelOverScreen.SetActive(false);
+        achievementPanel.SetActive(false);
+        //Close the level introduction panels
+        levelIntro1.SetActive(false);
+        levelIntro2.SetActive(false);
+        levelIntro3.SetActive(false);
         //open level selector
         levelSelector.SetActive(true);
         //set selected button to level 1
         eventSystem.firstSelectedGameObject = level1Btn;
-
     }
 
     public void OnQuit()
@@ -78,6 +87,10 @@ public class LevelManager : MonoBehaviour
     {
         //hide level selector
         levelSelector.SetActive(false);
+        //Hide setting screen
+        startScreenOptionPanel.SetActive(false);
+        //Hide achievement screen
+        achievementPanel.SetActive(false);
         //open start screeb
         startScreen.SetActive(true);
         //set selected button play
@@ -176,18 +189,69 @@ public class LevelManager : MonoBehaviour
         }
         finalTimeDisplay.text = displayText;
 
-        string discountReminderText = "";
         //Change the discount text if the lap is completed under two minutes
-        if (completionTime <= timeQualifiedToGetDiscount)
+        if (completionTime <= timeLimitForAchievement)
         {
-            discountReminderText = "Finish the lap under two minutes? ";
-            discounBtn.SetActive(true);
+
         }
         else
         {
-            discountReminderText = "Finish the lap in two minutes and get a discount!";
-            discounBtn.SetActive(false);
+
         }
-        discountReminder.text = discountReminderText;
+    }
+
+    //Link to the BIRD Website
+    public void OnLinkToWebsite()
+    {
+        Application.OpenURL("https://www.btwclub.co.uk/");
+    }
+
+    //Link to the Buy Ticket page
+    public void OnGetTicket()
+    {
+        Application.OpenURL("https://www.btwclub.co.uk/events/bird-2025");
+    }
+
+    //Open the option menu in title screen
+    public void OnStartScreenOptionMenu()
+    {
+        //hide paused panel
+        startScreen.SetActive(false);
+        //open setting menu
+        startScreenOptionPanel.SetActive(true);
+        //set default button to quit
+        eventSystem.firstSelectedGameObject = closeSettingsBtn;
+    }
+
+    //Open the Achievement panel
+    public void OnAchievement()
+    {
+        startScreen.SetActive(false) ;
+        levelSelector.SetActive(false);
+        achievementPanel.SetActive(true);
+    }
+
+    //Link to get discount code
+    public void OnDiscount()
+    {
+        Application.OpenURL("https://www.btwclub.co.uk/events/bird-2025");
+    }
+
+    public void OnLevelIntro1()
+    {
+        levelSelector.SetActive(false);
+        levelIntro1.SetActive(true);
+    }
+
+    public void OnLevelIntro2()
+    {
+        levelSelector.SetActive(false);
+        levelIntro2.SetActive(true);
+    }
+
+    public void OnLevelIntro3()
+    {
+        levelSelector.SetActive(false);
+        levelIntro3.SetActive(true);
     }
 }
