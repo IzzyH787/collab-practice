@@ -189,11 +189,5 @@ public class LevelManager : MonoBehaviour
             discounBtn.SetActive(false);
         }
         discountReminder.text = discountReminderText;
-        
-    }
-
-    public void OpenURL(string url)
-    {
-        Application.OpenURL(url);
     }
 }
