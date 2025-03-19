@@ -6,7 +6,7 @@
             "id": "0d678615-a526-4c74-88c7-783d841f031e",
             "actions": [
                 {
-                    "name": "Up/down",
+                    "name": "Throttle",
                     "type": "Button",
                     "id": "9b03fc4d-8851-4ab6-851e-a61521c963fd",
                     "expectedControlType": "Button",
@@ -50,20 +50,9 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up/down",
+                    "action": "Throttle",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "9a7dddcd-3341-411e-b5fb-d07200c45e57",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Up/down",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
@@ -72,7 +61,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up/down",
+                    "action": "Throttle",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -83,7 +72,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up/down",
+                    "action": "Throttle",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -94,18 +83,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up/down",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "negative",
-                    "id": "1f28d370-2c16-44c7-b35a-12cbadeb5584",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Up/down",
+                    "action": "Throttle",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -123,7 +101,7 @@
                 {
                     "name": "negative",
                     "id": "65682c12-6b7a-43c6-b373-6ca1de57b059",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -134,7 +112,7 @@
                 {
                     "name": "positive",
                     "id": "2ddc1ffa-3a12-4739-b2be-d07356a57d4e",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -156,7 +134,7 @@
                 {
                     "name": "negative",
                     "id": "237188c2-7bd1-47d0-8ca4-c2e666c7adc0",
-                    "path": "<Gamepad>/leftStick/left",
+                    "path": "<Gamepad>/rightStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -167,7 +145,7 @@
                 {
                     "name": "positive",
                     "id": "569e514e-24bf-4d1e-aa20-70a11c6ac657",
-                    "path": "<Gamepad>/leftStick/right",
+                    "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -255,7 +233,7 @@
                 {
                     "name": "negative",
                     "id": "c6f8aa63-f417-4f66-8efd-971a377646b8",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -266,7 +244,7 @@
                 {
                     "name": "positive",
                     "id": "ac32139c-d454-4299-90a9-2950d2dea43d",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -288,7 +266,7 @@
                 {
                     "name": "negative",
                     "id": "f347f37a-2b83-43a2-a4f9-8b87ef6845bb",
-                    "path": "<Gamepad>/rightStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -299,7 +277,7 @@
                 {
                     "name": "positive",
                     "id": "7ede656e-68ab-4c22-a7cd-2d9f02f1cd44",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
