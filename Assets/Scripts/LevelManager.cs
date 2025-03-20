@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEditor.Search;
+
 
 public class LevelManager : MonoBehaviour
 {
@@ -64,6 +63,7 @@ public class LevelManager : MonoBehaviour
 
     public void OnPlay()
     {
+        
         //hide start screen
         startScreen.SetActive(false);
         levelOverScreen.SetActive(false);
