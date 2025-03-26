@@ -81,6 +81,7 @@ public class LevelManager : MonoBehaviour
     public void OnQuit()
     {
         //terminate game
+        Application.OpenURL("https://jiusuia.github.io/web_game/");
         Application.Quit();
     }
     public void OnBackToStart()
