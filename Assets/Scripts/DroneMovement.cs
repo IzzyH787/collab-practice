@@ -43,11 +43,11 @@ public class DroneMovement : MonoBehaviour
             //animator.SetBool("Fly", true));
         }
         //if moving down
-        else if (upDownInput < 0)
+        /*else if (upDownInput < 0)
         {
             upDownAxis = riseMultiplier * upDownInput;
             //animator.SetBool("Fly", false));
-        }
+        }*/
         else
         {
             if (Mathf.Abs(rb.velocity.y) > 0.1)
@@ -68,14 +68,14 @@ public class DroneMovement : MonoBehaviour
         if (forwardBackInput > 0)
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
-            forwardBackwardAxis = speed;
+            forwardBackwardAxis = speed * upDownInput;
             //animator.SetBool("Fly", true);
         }
         //if moving backward
         else if (forwardBackInput < 0)
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
-            forwardBackwardAxis = speed;
+            forwardBackwardAxis = speed * upDownInput;
             //animator.SetBool("Fly", true);
         }
         //no input
@@ -89,14 +89,14 @@ public class DroneMovement : MonoBehaviour
         if(leftRightInput > 0)
         {
             leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
-            leftRightAxis = speed;
+            leftRightAxis = speed * upDownInput;
             //animator.SetBool("Fly", true);
         }
         //if moving backward
         else if (leftRightInput < 0)
         {
             leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
-            leftRightAxis = speed;
+            leftRightAxis = speed * upDownInput;
             //animator.SetBool("Fly", true);
         }
         //no input
@@ -112,7 +112,7 @@ public class DroneMovement : MonoBehaviour
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
-            forwardBackwardAxis = 0.5f * speed;
+            forwardBackwardAxis = 0.5f * speed * upDownInput;
             leftRightAxis = 0.5f;
         }
         #endregion
@@ -121,8 +121,8 @@ public class DroneMovement : MonoBehaviour
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
-            forwardBackwardAxis = 0.5f * speed;
-            leftRightAxis = 0.5f * speed;
+            forwardBackwardAxis = 0.5f * speed * upDownInput;
+            leftRightAxis = 0.5f * speed * upDownInput;
         }
         #endregion
         #region backRightMovement
@@ -130,8 +130,8 @@ public class DroneMovement : MonoBehaviour
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
-            forwardBackwardAxis = 0.5f * speed;
-            leftRightAxis = 0.5f * speed;
+            forwardBackwardAxis = 0.5f * speed * upDownInput;
+            leftRightAxis = 0.5f * speed * upDownInput;
         }
         #endregion
         #region backLeftMovement
@@ -139,7 +139,7 @@ public class DroneMovement : MonoBehaviour
         {
             forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
             leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
-            forwardBackwardAxis = 0.5f * speed;
+            forwardBackwardAxis = 0.5f * speed * upDownInput;
             leftRightAxis = 0.5f;
         }
         #endregion
