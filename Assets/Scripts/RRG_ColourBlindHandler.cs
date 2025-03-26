@@ -23,12 +23,20 @@ public class RRG_ColourBlindHandler : MonoBehaviour
     [SerializeField] private Button level3LevelPlayButton;
 
     [SerializeField] private Toggle deuteranopiaOnOffToggle;
+    [SerializeField] private Toggle tritanopiaOnOffToggle;
 
     private bool deuteranopiaOn = false;
+    private bool tritanopiaOn = false;
+    private bool defaultColourUIBool = true;
 
     private ColorBlock deuteranopiaCurrentColour;
     private Color deuteranopiaGreen; //the colour used to replace green
+
+    private ColorBlock defaultColourCurrentColour;
     private Color defaultColour; //default UI colour
+
+    private ColorBlock tritanopiaCurrentColour;
+    private Color tritanopiaGreen; //the colour used to replace green
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +47,13 @@ public class RRG_ColourBlindHandler : MonoBehaviour
         deuteranopiaGreen.b = 0.3843137f;
         deuteranopiaGreen.a = 1.0f;
 
+        tritanopiaCurrentColour = playButton.colors;
+        tritanopiaGreen.r = 0.227451f;
+        tritanopiaGreen.g = 0.8784314f;
+        tritanopiaGreen.b = 0.8627451f;
+        tritanopiaGreen.a = 1.0f;
+
+        defaultColourCurrentColour = settingsButton.colors;
         defaultColour.r = 0.0f;
         defaultColour.g = 1.0f;
         defaultColour.b = 0.03921569f;
@@ -49,7 +64,30 @@ public class RRG_ColourBlindHandler : MonoBehaviour
     void Update()
     {
         deuteranopia();
-        deuteranopiaTurnedOn();
+        //deuteranopiaTurnedOn();
+
+        tritanopia();
+        //tritanopiaTurnedOn();
+
+        if (defaultColourUIBool)
+        {
+            defaultColourCurrentColour.highlightedColor = defaultColour;
+            quitButton.colors = defaultColourCurrentColour;
+            playButton.colors = defaultColourCurrentColour;
+            settingsButton.colors = defaultColourCurrentColour;
+            quitButtonMM.colors = defaultColourCurrentColour;
+            level1Button.colors = defaultColourCurrentColour;
+            level2Button.colors = defaultColourCurrentColour;
+            level3Button.colors = defaultColourCurrentColour;
+            levelSelectorBackButton.colors = defaultColourCurrentColour;
+            achievementsBackButton.colors = defaultColourCurrentColour;
+            level1BackButton.colors = defaultColourCurrentColour;
+            level1LevelPlayButton.colors = defaultColourCurrentColour;
+            level2BackButton.colors = defaultColourCurrentColour;
+            level2LevelPlayButton.colors = defaultColourCurrentColour;
+            level3BackButton.colors = defaultColourCurrentColour;
+            level3LevelPlayButton.colors = defaultColourCurrentColour;
+        }
     }
 
     public void deuteranopia()
@@ -75,24 +113,29 @@ public class RRG_ColourBlindHandler : MonoBehaviour
 
 
         }
-        if (!deuteranopiaOn)
+    }
+    public void tritanopia()
+    {
+        if (tritanopiaOn)
         {
-            deuteranopiaCurrentColour.highlightedColor = defaultColour;
-            quitButton.colors = deuteranopiaCurrentColour;
-            playButton.colors = deuteranopiaCurrentColour;
-            settingsButton.colors = deuteranopiaCurrentColour;
-            quitButtonMM.colors = deuteranopiaCurrentColour;
-            level1Button.colors = deuteranopiaCurrentColour;
-            level2Button.colors = deuteranopiaCurrentColour;
-            level3Button.colors = deuteranopiaCurrentColour;
-            levelSelectorBackButton.colors = deuteranopiaCurrentColour;
-            achievementsBackButton.colors = deuteranopiaCurrentColour;
-            level1BackButton.colors = deuteranopiaCurrentColour;
-            level1LevelPlayButton.colors = deuteranopiaCurrentColour;
-            level2BackButton.colors = deuteranopiaCurrentColour;
-            level2LevelPlayButton.colors = deuteranopiaCurrentColour;
-            level3BackButton.colors = deuteranopiaCurrentColour;
-            level3LevelPlayButton.colors = deuteranopiaCurrentColour;
+            tritanopiaCurrentColour.highlightedColor = tritanopiaGreen;
+            quitButton.colors = tritanopiaCurrentColour;
+            playButton.colors = tritanopiaCurrentColour;
+            settingsButton.colors = tritanopiaCurrentColour;
+            quitButtonMM.colors = tritanopiaCurrentColour;
+            level1Button.colors = tritanopiaCurrentColour;
+            level2Button.colors = tritanopiaCurrentColour;
+            level3Button.colors = tritanopiaCurrentColour;
+            levelSelectorBackButton.colors = tritanopiaCurrentColour;
+            achievementsBackButton.colors = tritanopiaCurrentColour;
+            level1BackButton.colors = tritanopiaCurrentColour;
+            level1LevelPlayButton.colors = tritanopiaCurrentColour;
+            level2BackButton.colors = tritanopiaCurrentColour;
+            level2LevelPlayButton.colors = tritanopiaCurrentColour;
+            level3BackButton.colors = tritanopiaCurrentColour;
+            level3LevelPlayButton.colors = tritanopiaCurrentColour;
+
+
         }
     }
     public void deuteranopiaTurnedOn()
@@ -100,10 +143,28 @@ public class RRG_ColourBlindHandler : MonoBehaviour
         if (deuteranopiaOnOffToggle.isOn == false)
         {
             deuteranopiaOn = false;
+            defaultColourUIBool = true;
         }
         if (deuteranopiaOnOffToggle.isOn == true)
         {
             deuteranopiaOn = true;
+            defaultColourUIBool = false;
+            tritanopiaOnOffToggle.isOn = false;
+        }
+    }
+
+    public void tritanopiaTurnedOn()
+    {
+        if (tritanopiaOnOffToggle.isOn == false)
+        {
+            tritanopiaOn = false;
+            defaultColourUIBool = true;
+        }
+        if (tritanopiaOnOffToggle.isOn == true)
+        {
+            tritanopiaOn = true;
+            defaultColourUIBool = false;
+            deuteranopiaOnOffToggle.isOn = false;
         }
     }
 }
