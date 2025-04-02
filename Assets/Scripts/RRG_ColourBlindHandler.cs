@@ -88,6 +88,34 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             level3BackButton.colors = defaultColourCurrentColour;
             level3LevelPlayButton.colors = defaultColourCurrentColour;
         }
+
+        //running in update to avoid bug: when player ticks a colour blind mode when a mode is already selected the colour will default to green.
+        if (tritanopiaOnOffToggle.isOn == true)
+        {
+            tritanopiaOn = true;
+            defaultColourUIBool = false;
+            deuteranopiaOnOffToggle.isOn = false;
+            deuteranopiaOn = false;
+            PlayerPrefs.SetInt("tritanopiaOnOffToggle", 1);
+            PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
+        }
+        if (tritanopiaOnOffToggle.isOn == false)
+        {
+            PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
+        }
+        if (deuteranopiaOnOffToggle.isOn == true)
+        {
+            deuteranopiaOn = true;
+            defaultColourUIBool = false;
+            tritanopiaOnOffToggle.isOn = false;
+            tritanopiaOn = false;
+            PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 1);
+            PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
+        }
+        if (deuteranopiaOnOffToggle.isOn == false)
+        {
+            PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
+        }
     }
 
     public void deuteranopia()
@@ -143,13 +171,18 @@ public class RRG_ColourBlindHandler : MonoBehaviour
         if (deuteranopiaOnOffToggle.isOn == false)
         {
             deuteranopiaOn = false;
+            tritanopiaOn = false;
             defaultColourUIBool = true;
+            PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
         }
         if (deuteranopiaOnOffToggle.isOn == true)
         {
             deuteranopiaOn = true;
             defaultColourUIBool = false;
             tritanopiaOnOffToggle.isOn = false;
+            tritanopiaOn = false;
+            PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 1);
+            PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
         }
     }
 
@@ -158,13 +191,18 @@ public class RRG_ColourBlindHandler : MonoBehaviour
         if (tritanopiaOnOffToggle.isOn == false)
         {
             tritanopiaOn = false;
+            deuteranopiaOn = false;
             defaultColourUIBool = true;
+            PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
         }
         if (tritanopiaOnOffToggle.isOn == true)
         {
             tritanopiaOn = true;
             defaultColourUIBool = false;
             deuteranopiaOnOffToggle.isOn = false;
+            deuteranopiaOn = false;
+            PlayerPrefs.SetInt("tritanopiaOnOffToggle", 1);
+            PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
         }
     }
 }
