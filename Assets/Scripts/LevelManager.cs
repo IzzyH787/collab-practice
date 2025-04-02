@@ -43,6 +43,8 @@ public class LevelManager : MonoBehaviour
     public bool showInGamePanel = true;
     float startTime = 0;
 
+    public AchievementManager achievementManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -193,7 +195,8 @@ public class LevelManager : MonoBehaviour
         //Change the discount text if the lap is completed under two minutes
         if (completionTime <= timeLimitForAchievement)
         {
-
+            Debug.Log("AchievementManager Unlocked");
+            achievementManager.IsLv1Complete = true;
         }
         else
         {
