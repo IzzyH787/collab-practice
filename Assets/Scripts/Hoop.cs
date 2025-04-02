@@ -16,6 +16,8 @@ public class Hoop : MonoBehaviour
 
     public Material glowMaterial;
     public Material blackMaterial;
+    public Material tritanopiaMaterial;
+    public Material deuteranopiaMaterial;
 
     AudioManager audioManager;
     // Start is called before the first frame update
@@ -29,7 +31,7 @@ public class Hoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hoopNumber == drone.targetHoop)
+        if (hoopNumber == drone.targetHoop && PlayerPrefs.GetInt("deuteranopiaOnOffToggle") == 0 && PlayerPrefs.GetInt("tritanopiaOnOffToggle") == 0)
         {
             //highlight hoop
             wall1.GetComponent<MeshRenderer>().material = glowMaterial;
@@ -38,6 +40,16 @@ public class Hoop : MonoBehaviour
         {
             //unhighlight hoop
             wall1.GetComponent<MeshRenderer>().material = blackMaterial;
+        }
+        if (hoopNumber == drone.targetHoop && PlayerPrefs.GetInt("deuteranopiaOnOffToggle") == 1)
+        {
+            wall1.GetComponent<MeshRenderer>().material = deuteranopiaMaterial;
+            
+        }
+        if (hoopNumber == drone.targetHoop && PlayerPrefs.GetInt("tritanopiaOnOffToggle") == 1)
+        {
+            wall1.GetComponent<MeshRenderer>().material = tritanopiaMaterial;
+            
         }
     }
 

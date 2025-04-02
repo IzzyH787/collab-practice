@@ -339,6 +339,8 @@ MonoBehaviour:
   wall4: {fileID: 8076984334491559674}
   glowMaterial: {fileID: 2100000, guid: 40e6a904c5394a54d9fc7e562b77fa57, type: 2}
   blackMaterial: {fileID: 2100000, guid: 0554e50818a621b4ba5191fcea9a6bfd, type: 2}
+  tritanopiaMaterial: {fileID: 2100000, guid: 91c62b7458942d740bf01bfe2d67092b, type: 2}
+  deuteranopiaMaterial: {fileID: 2100000, guid: 28c3ca828afca384fba2dd8ddfdb69ad, type: 2}
 --- !u!1 &7669089317651284012
 GameObject:
   m_ObjectHideFlags: 0
