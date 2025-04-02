@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1708,56 +1708,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3446344611464946645, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
   m_PrefabInstance: {fileID: 2119115963}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1101556503 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6566607694904963757, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
-  m_PrefabInstance: {fileID: 2119115963}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1101556508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101556503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 331527176}
-          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
-          m_MethodName: hoverQuit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 331527176}
-          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
-          m_MethodName: unhoverQuit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!224 &1236774371 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1393641294584229515, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
@@ -2469,6 +2419,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4688539194051282654, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 9470cc0a64d0a8644be82066a3def658, type: 3}
     - target: {fileID: 4831361194925713217, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2476,6 +2430,10 @@ PrefabInstance:
     - target: {fileID: 5069928559782331610, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757566015785624830, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_Camera
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8256567026429435169, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: showInGamePanel
@@ -2525,9 +2483,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 457768351553761067, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1585475146}
-    - targetCorrespondingSourceObject: {fileID: 6566607694904963757, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1101556508}
     - targetCorrespondingSourceObject: {fileID: 2035847497961284819, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       insertIndex: -1
       addedObject: {fileID: 718530973}
