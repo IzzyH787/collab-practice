@@ -52,7 +52,8 @@ public class LevelManager : MonoBehaviour
         levelSelector.SetActive(false);
         hud.SetActive(false);
         pausePanel.SetActive(false);
-        settingsPanel.SetActive(false);
+        startScreenOptionPanel.SetActive(false);
+        //settingsPanel.SetActive(false);
         levelOverScreen.SetActive(false);
         //show scenes start panel
         sceneStartPanel.SetActive(showInGamePanel);
@@ -145,7 +146,8 @@ public class LevelManager : MonoBehaviour
         //hide paused panel
         pausePanel.SetActive(false);
         //open setting menu
-        settingsPanel.SetActive(true);
+        startScreenOptionPanel.SetActive(true);
+//        settingsPanel.SetActive(true);
         //set default button to quit
         eventSystem.firstSelectedGameObject = closeSettingsBtn;
     }
@@ -161,7 +163,7 @@ public class LevelManager : MonoBehaviour
     public void OnCloseSetting()
     {
         //hide settings
-        settingsPanel.SetActive(false);
+        startScreenOptionPanel.SetActive(true);
         //show paused panel
         pausePanel.SetActive(true);
         //set deault button to resume
