@@ -42,12 +42,7 @@ public class DroneMovement : MonoBehaviour
             upDownAxis = riseMultiplier * upDownInput;
             //animator.SetBool("Fly", true));
         }
-        //if moving down
-        /*else if (upDownInput < 0)
-        {
-            upDownAxis = riseMultiplier * upDownInput;
-            //animator.SetBool("Fly", false));
-        }*/
+
         else
         {
             if (Mathf.Abs(rb.velocity.y) > 0.1)
@@ -161,8 +156,11 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
 
+        float forwardRad = forwardBackAngle * Mathf.Deg2Rad;
+        float leftRad = leftRightAngle * Mathf.Deg2Rad;
+        //rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
+        rb.AddRelativeForce(upDownAxis * Mathf.Sin(leftRad), (upDownAxis * Mathf.Cos(forwardRad)) + (upDownAxis * Mathf.Cos(leftRad)) + gravityForce, upDownAxis * Mathf.Sin(forwardRad));
         //cap speed
         if (rb.velocity.x > maxSpeed)
         {
