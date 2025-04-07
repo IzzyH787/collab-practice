@@ -18,6 +18,7 @@ public class DroneMovement : MonoBehaviour
     public GameObject propeller1;
     public GameObject propeller2;
     public float maxRotSpeed;
+    public float airResistance;
 
     float upDownAxis, forwardBackwardAxis, leftRightAxis;
     float forwardBackAngle = 0, leftRightAngle = 0, yAxisAngle = 0;
@@ -188,7 +189,7 @@ public class DroneMovement : MonoBehaviour
         float forwardRad = forwardBackAngle * Mathf.Deg2Rad;
         float leftRad = leftRightAngle * Mathf.Deg2Rad;
         //rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
-        rb.AddRelativeForce(upDownAxis * Mathf.Sin(leftRad), (upDownAxis * Mathf.Cos(forwardRad)) + (upDownAxis * Mathf.Cos(leftRad)) + gravityForce, upDownAxis * Mathf.Sin(forwardRad));
+        rb.AddRelativeForce(upDownAxis * Mathf.Sin(leftRad) , (upDownAxis * Mathf.Cos(forwardRad)) + (upDownAxis * Mathf.Cos(leftRad)) + gravityForce, upDownAxis * Mathf.Sin(forwardRad));
         //cap speed
         if (rb.velocity.x > maxSpeed)
         {
