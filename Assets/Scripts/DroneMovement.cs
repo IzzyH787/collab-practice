@@ -18,6 +18,7 @@ public class DroneMovement : MonoBehaviour
     public GameObject propeller1;
     public GameObject propeller2;
     public float maxRotSpeed;
+    public float airResistance;
 
     float upDownAxis, forwardBackwardAxis, leftRightAxis;
     float forwardBackAngle = 0, leftRightAngle = 0, yAxisAngle = 0;
@@ -30,7 +31,7 @@ public class DroneMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
-        //animator = gameObject.GetComponent<Animator>();
+        PlayerPrefs.SetInt("SelfLevelling", 1);
     }
 
     void Controls()
@@ -40,14 +41,8 @@ public class DroneMovement : MonoBehaviour
         if (upDownInput > 0)
         {
             upDownAxis = riseMultiplier * upDownInput;
-            //animator.SetBool("Fly", true));
         }
-        //if moving down
-        /*else if (upDownInput < 0)
-        {
-            upDownAxis = riseMultiplier * upDownInput;
-            //animator.SetBool("Fly", false));
-        }*/
+
         else
         {
             if (Mathf.Abs(rb.velocity.y) > 0.1)
@@ -59,50 +54,79 @@ public class DroneMovement : MonoBehaviour
             {
                 upDownAxis = 0;
             }
-            // upDownAxis -= Mathf.Lerp(upDownAxis, 0, Time.deltaTime);
-            //animator.SetBool("Fly", false));
         }
         #endregion
         #region forwardBackMovement
         //if moving forward
         if (forwardBackInput > 0)
         {
-            forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
+            if (PlayerPrefs.GetInt("SelfLevelling") == 1)
+            {
+                forwardBackAngle = Mathf.Lerp(forwardBackAngle, angle, Time.deltaTime);
+            }
+            else
+            {
+                forwardBackAngle = Mathf.Lerp(forwardBackAngle, forwardBackAngle + 90, Time.deltaTime);
+            }
             forwardBackwardAxis = speed * upDownInput;
             //animator.SetBool("Fly", true);
         }
         //if moving backward
         else if (forwardBackInput < 0)
         {
-            forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
+            if (PlayerPrefs.GetInt("SelfLevelling") == 1)
+            {
+                forwardBackAngle = Mathf.Lerp(forwardBackAngle, -angle, Time.deltaTime);
+            }
+            else
+            {
+                forwardBackAngle = Mathf.Lerp(forwardBackAngle, forwardBackAngle - 90, Time.deltaTime);
+            }
             forwardBackwardAxis = speed * upDownInput;
-            //animator.SetBool("Fly", true);
         }
         //no input
         else
         {
-            forwardBackAngle = Mathf.Lerp(forwardBackAngle, 0, Time.deltaTime);
+            if (PlayerPrefs.GetInt("SelfLevelling") == 1)
+            {
+                forwardBackAngle = Mathf.Lerp(forwardBackAngle, 0, Time.deltaTime);
+            }
             forwardBackwardAxis = 0;
         }
         #endregion
         #region leftRightMovement
         if(leftRightInput > 0)
         {
-            leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
+            if (PlayerPrefs.GetInt("SelfLevelling") == 1)
+            {
+                leftRightAngle = Mathf.Lerp(leftRightAngle, angle, Time.deltaTime);
+            }
+            else
+            {
+                leftRightAngle = Mathf.Lerp(leftRightAngle, leftRightAngle + 90, Time.deltaTime);
+            }
             leftRightAxis = speed * upDownInput;
-            //animator.SetBool("Fly", true);
         }
         //if moving backward
         else if (leftRightInput < 0)
         {
-            leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
+            if (PlayerPrefs.GetInt("SelfLevelling") == 1)
+            {
+                leftRightAngle = Mathf.Lerp(leftRightAngle, -angle, Time.deltaTime);
+            }
+            else
+            {
+                leftRightAngle = Mathf.Lerp(leftRightAngle, leftRightAngle - 90, Time.deltaTime);
+            }
             leftRightAxis = speed * upDownInput;
-            //animator.SetBool("Fly", true);
         }
         //no input
         else
         {
-            leftRightAngle = Mathf.Lerp(leftRightAngle, 0, Time.deltaTime);
+            if (PlayerPrefs.GetInt("SelfLevelling") == 1)
+            {
+                leftRightAngle = Mathf.Lerp(leftRightAngle, 0, Time.deltaTime);
+            }
             leftRightAxis = 0;
         }
         #endregion
@@ -161,8 +185,11 @@ public class DroneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
 
+        float forwardRad = forwardBackAngle * Mathf.Deg2Rad;
+        float leftRad = leftRightAngle * Mathf.Deg2Rad;
+        //rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
+        rb.AddRelativeForce(upDownAxis * Mathf.Sin(leftRad) , (upDownAxis * Mathf.Cos(forwardRad)) + (upDownAxis * Mathf.Cos(leftRad)) + gravityForce, upDownAxis * Mathf.Sin(forwardRad));
         //cap speed
         if (rb.velocity.x > maxSpeed)
         {
