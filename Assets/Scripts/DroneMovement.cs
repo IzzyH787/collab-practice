@@ -31,7 +31,7 @@ public class DroneMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
-        PlayerPrefs.SetInt("SelfLevelling", 1);
+        PlayerPrefs.SetInt("SelfLevelling", 0);
     }
 
     void Controls()
