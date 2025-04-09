@@ -1160,17 +1160,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320867153}
   m_CullTransparentMesh: 1
---- !u!114 &1329157857 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4056708943495258864, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
-  m_PrefabInstance: {fileID: 1139904972}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1385668124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2918256688900085386, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
@@ -2612,6 +2601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4688539194051282654, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f38fee1a8efe304ebdb165223d9aceb, type: 3}
     - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2720032
@@ -2708,13 +2701,23 @@ MonoBehaviour:
   level2Button: {fileID: 1514181770}
   level3Button: {fileID: 1830581435}
   levelSelectorBackButton: {fileID: 585995551}
-  achievementsBackButton: {fileID: 1329157857}
+  achievementsBackButton: {fileID: 0}
   level1BackButton: {fileID: 2006500831}
   level1LevelPlayButton: {fileID: 1647981274}
   level2BackButton: {fileID: 222107872}
   level2LevelPlayButton: {fileID: 458536305}
   level3BackButton: {fileID: 264427343}
   level3LevelPlayButton: {fileID: 1385668124}
+  homeWebPageButton: {fileID: 0}
+  achievementsButton: {fileID: 0}
+  ticketsButton: {fileID: 0}
+  pauseResumeButton: {fileID: 0}
+  pauseSettingsButton: {fileID: 0}
+  pauseQuitButton: {fileID: 0}
+  levelOverLevelSelectButton: {fileID: 0}
+  levelOverGetTicketButton: {fileID: 0}
+  levelOverAchievementsButton: {fileID: 0}
+  HUDPauseButton: {fileID: 0}
   deuteranopiaOnOffToggle: {fileID: 669452586}
   tritanopiaOnOffToggle: {fileID: 875377013}
 --- !u!4 &2057044497
