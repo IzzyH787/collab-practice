@@ -839,6 +839,7 @@ GameObject:
   - component: {fileID: 389812250}
   - component: {fileID: 389812249}
   - component: {fileID: 389812248}
+  - component: {fileID: 389812253}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -1029,6 +1030,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1246893355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &389812253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389812247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b0013f68868ea49a95dae2f8a2b02a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &425527183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,6 +1469,7 @@ GameObject:
   - component: {fileID: 612359151}
   - component: {fileID: 612359150}
   - component: {fileID: 612359149}
+  - component: {fileID: 612359153}
   m_Layer: 0
   m_Name: Lava (2)
   m_TagString: Untagged
@@ -1550,6 +1564,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1246893355}
   m_LocalEulerAnglesHint: {x: 0, y: 90.095, z: 0}
+--- !u!114 &612359153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612359148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b0013f68868ea49a95dae2f8a2b02a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &686425956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1763,6 +1789,16 @@ MonoBehaviour:
   level2LevelPlayButton: {fileID: 1998769657}
   level3BackButton: {fileID: 1998769656}
   level3LevelPlayButton: {fileID: 1998769655}
+  homeWebPageButton: {fileID: 0}
+  achievementsButton: {fileID: 0}
+  ticketsButton: {fileID: 0}
+  pauseResumeButton: {fileID: 0}
+  pauseSettingsButton: {fileID: 0}
+  pauseQuitButton: {fileID: 0}
+  levelOverLevelSelectButton: {fileID: 0}
+  levelOverGetTicketButton: {fileID: 0}
+  levelOverAchievementsButton: {fileID: 0}
+  HUDPauseButton: {fileID: 0}
   deuteranopiaOnOffToggle: {fileID: 1830290760}
   tritanopiaOnOffToggle: {fileID: 1349628861}
 --- !u!4 &808034102
@@ -5800,6 +5836,7 @@ GameObject:
   - component: {fileID: 2136111505}
   - component: {fileID: 2136111504}
   - component: {fileID: 2136111503}
+  - component: {fileID: 2136111507}
   m_Layer: 0
   m_Name: Lava (1)
   m_TagString: Untagged
@@ -5894,6 +5931,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1246893355}
   m_LocalEulerAnglesHint: {x: 0, y: 21.356, z: 0}
+--- !u!114 &2136111507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136111502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b0013f68868ea49a95dae2f8a2b02a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

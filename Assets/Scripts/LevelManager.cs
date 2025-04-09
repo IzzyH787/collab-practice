@@ -45,6 +45,8 @@ public class LevelManager : MonoBehaviour
     public int levelNum;
     public AchievementManager achievementManager;
 
+    public bool hitlava;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -173,6 +175,7 @@ public class LevelManager : MonoBehaviour
     }
     public void OnLevelComplete()
     {
+        
         Time.timeScale = 0; //pause timer
         hud.SetActive(false); //hide hud
                               //show level over screen
@@ -193,7 +196,7 @@ public class LevelManager : MonoBehaviour
             displayText = minutes + ":0" + seconds;
         }
         finalTimeDisplay.text = displayText;
-
+        Debug.Log(levelNum);
         //Change the discount text if the lap is completed under two minutes
 
         /////////////CHECKS FOR LEVELS INDIVIDUALLY COMPLETE/////////////////
@@ -201,6 +204,7 @@ public class LevelManager : MonoBehaviour
         ////////LEVEL 1////////////
         if (levelNum == 1)
         {
+            Debug.Log("l1 won");
             PlayerPrefs.SetInt("IsLv1Complete", 1); //level 1 complete
             //acro mode 
             if (PlayerPrefs.GetInt("SelfLeveling") == 0)
@@ -222,60 +226,68 @@ public class LevelManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("IsLv1CompleteInTimer", 1);
             }
+        }
 
 
-            ////////LEVEL 2////////////
-            else if (levelNum == 2)
+        ////////LEVEL 2////////////
+        else if (levelNum == 2)
+        {
+            Debug.Log("l2 won");
+            PlayerPrefs.SetInt("IsLv2Complete", 1);
+            //acro mode 
+            if (PlayerPrefs.GetInt("SelfLeveling") == 0)
             {
-                PlayerPrefs.SetInt("IsLv2Complete", 1);
-                //acro mode 
-                if (PlayerPrefs.GetInt("SelfLeveling") == 0)
-                {
-                    PlayerPrefs.SetInt("IsLv2CompleteAcro", 1);
-                }
-                //self levelling mode
-                else
-                {
-                    PlayerPrefs.SetInt("IsLv2CompleteSL", 1);
-                }
-                ////////CHECK IF COMPLETED IN TIME///////////
-                if (completionTime <= 60)
-                {
-                    PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
-                    PlayerPrefs.SetInt("IsLv2CompleteInMin", 1);
-                }
-                else if (completionTime <= timeLimitForAchievement)
-                {
-                    PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
-                }
+                PlayerPrefs.SetInt("IsLv2CompleteAcro", 1);
             }
-
-
-            ////////LEVEL 3////////////
-            else if (levelNum == 3)
+            //self levelling mode
+            else
             {
-                PlayerPrefs.SetInt("IsLv3Complete", 1);
-                //acro mode 
-                if (PlayerPrefs.GetInt("SelfLeveling") == 0)
-                {
-                    PlayerPrefs.SetInt("IsLv3CompleteAcro", 1);
-                }
-                //self levelling mode
-                else
-                {
-                    PlayerPrefs.SetInt("IsLv3CompleteSL", 1);
-                }
-                ////////CHECK IF COMPLETED IN TIME///////////
-                if (completionTime <= 60)
-                {
-                    PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
-                    PlayerPrefs.SetInt("IsLv3CompleteInMin", 1);
-                }
-                else if (completionTime <= timeLimitForAchievement)
-                {
-                    PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
-                }
+                PlayerPrefs.SetInt("IsLv2CompleteSL", 1);
             }
+            ////////CHECK IF COMPLETED IN TIME///////////
+            if (completionTime <= 60)
+            {
+                PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
+                PlayerPrefs.SetInt("IsLv2CompleteInMin", 1);
+            }
+            else if (completionTime <= timeLimitForAchievement)
+            {
+                PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
+            }
+        }
+
+
+        ////////LEVEL 3////////////
+        else if (levelNum == 3)
+        {
+            Debug.Log("l3 won");
+            if (!hitlava)
+            {
+                PlayerPrefs.SetInt("DidntHitLava", 1);
+                Debug.Log("chievement- no lava");
+            }
+            PlayerPrefs.SetInt("IsLv3Complete", 1);
+            //acro mode 
+            if (PlayerPrefs.GetInt("SelfLeveling") == 0)
+            {
+                PlayerPrefs.SetInt("IsLv3CompleteAcro", 1);
+            }
+            //self levelling mode
+            else
+            {
+                PlayerPrefs.SetInt("IsLv3CompleteSL", 1);
+            }
+            ////////CHECK IF COMPLETED IN TIME///////////
+            if (completionTime <= 60)
+            {
+                PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
+                PlayerPrefs.SetInt("IsLv3CompleteInMin", 1);
+            }
+            else if (completionTime <= timeLimitForAchievement)
+            {
+                PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
+            }
+        }
             /////////////////////CHECK IF ALL LEVELS COMPLETE//////////////////////////
             if (PlayerPrefs.GetInt("IsLv1Complete") == 1 && PlayerPrefs.GetInt("IsLv2Complete") == 1 && PlayerPrefs.GetInt("IsLv3Complete") == 1)
             {
@@ -315,7 +327,7 @@ public class LevelManager : MonoBehaviour
                 }
             }*/
 
-        }
+        
     }
 
     //Link to the BIRD Website

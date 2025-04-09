@@ -8,6 +8,7 @@ public class FireObstacle : MonoBehaviour
     public ParticleSystem particle;
     public DroneMovement drone;
     [SerializeField] private GameObject slowed;
+    private LevelManager levelManager;
 
     private float delay = 1.5f;
     private bool movementSlow = false;
@@ -16,6 +17,7 @@ public class FireObstacle : MonoBehaviour
     void Start()
     {
         particle = GetComponent<ParticleSystem>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     void Update()
@@ -51,13 +53,14 @@ public class FireObstacle : MonoBehaviour
         if (other.tag == "Player")
         {
             movementSlow = true;
+            levelManager.hitlava = true; 
         }
         
-        else if (other.tag == null)
+        /*else if (other.tag == null)
         {
             PlayerPrefs.SetInt("Didn't touch lava", 1);
             Debug.Log("Achievement Unlocked");
-        }
+        }*/
         
     }
 
