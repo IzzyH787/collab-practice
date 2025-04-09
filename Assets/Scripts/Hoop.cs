@@ -27,6 +27,16 @@ public class Hoop : MonoBehaviour
         Debug.Log(drone);
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        Debug.Log("tritanopia" + PlayerPrefs.GetInt("tritanopiaOnOffToggle"));
+        Debug.Log("deuteranopia" + PlayerPrefs.GetInt("deuteranopiaOnOffToggle"));
+
         if (hoopNumber == drone.targetHoop && PlayerPrefs.GetInt("deuteranopiaOnOffToggle") == 0 && PlayerPrefs.GetInt("tritanopiaOnOffToggle") == 0)
         {
             //highlight hoop
@@ -47,14 +57,6 @@ public class Hoop : MonoBehaviour
             wall1.GetComponent<MeshRenderer>().material = tritanopiaMaterial;
 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        Debug.Log("tritanopia" + PlayerPrefs.GetInt("tritanopiaOnOffToggle"));
-        Debug.Log("deuteranopia" + PlayerPrefs.GetInt("deuteranopiaOnOffToggle"));
     }
 
     private void Awake()
