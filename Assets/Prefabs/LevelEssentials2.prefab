@@ -10278,30 +10278,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quitButton: {fileID: 3203181926231797168}
-  playButton: {fileID: 0}
-  settingsButton: {fileID: 0}
-  quitButtonMM: {fileID: 0}
-  level1Button: {fileID: 0}
-  level2Button: {fileID: 0}
-  level3Button: {fileID: 0}
-  levelSelectorBackButton: {fileID: 0}
-  achievementsBackButton: {fileID: 0}
-  level1BackButton: {fileID: 0}
-  level1LevelPlayButton: {fileID: 0}
-  level2BackButton: {fileID: 0}
-  level2LevelPlayButton: {fileID: 0}
-  level3BackButton: {fileID: 0}
-  level3LevelPlayButton: {fileID: 0}
-  homeWebPageButton: {fileID: 0}
-  achievementsButton: {fileID: 0}
-  ticketsButton: {fileID: 0}
-  pauseResumeButton: {fileID: 0}
-  pauseSettingsButton: {fileID: 0}
-  pauseQuitButton: {fileID: 0}
-  levelOverLevelSelectButton: {fileID: 0}
-  levelOverGetTicketButton: {fileID: 0}
-  levelOverAchievementsButton: {fileID: 0}
-  HUDPauseButton: {fileID: 0}
+  playButton: {fileID: 4215296931695806083}
+  settingsButton: {fileID: 3845331900053870454}
+  quitButtonMM: {fileID: 2131217948031661959}
+  level1Button: {fileID: 136353020171652284}
+  level2Button: {fileID: 590125097161963132}
+  level3Button: {fileID: 3402129067632961293}
+  levelSelectorBackButton: {fileID: 7739325612398252075}
+  achievementsBackButton: {fileID: 1704069278553290115}
+  level1BackButton: {fileID: 2051319500169749647}
+  level1LevelPlayButton: {fileID: 5974290820320069714}
+  level2BackButton: {fileID: 8187371391926555456}
+  level2LevelPlayButton: {fileID: 1130618603590196906}
+  level3BackButton: {fileID: 4571954185424378162}
+  level3LevelPlayButton: {fileID: 1417600358572926619}
+  homeWebPageButton: {fileID: 8996405877151991417}
+  achievementsButton: {fileID: 7997502815562495759}
+  ticketsButton: {fileID: 8414633249473007771}
+  pauseResumeButton: {fileID: 7275127690133194527}
+  pauseSettingsButton: {fileID: 7971510139493961670}
+  pauseQuitButton: {fileID: 5117502646067678262}
+  levelOverLevelSelectButton: {fileID: 2788536319303269201}
+  levelOverGetTicketButton: {fileID: 4188527914784364959}
+  levelOverAchievementsButton: {fileID: 2059756527436611802}
+  HUDPauseButton: {fileID: 8928164152890875050}
   deuteranopiaOnOffToggle: {fileID: 2535886589874784469}
   tritanopiaOnOffToggle: {fileID: 212926178392247132}
 --- !u!1 &4427659216685111707
