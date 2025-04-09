@@ -24,6 +24,15 @@ public class DroneMovement : MonoBehaviour
     float forwardBackAngle = 0, leftRightAngle = 0, yAxisAngle = 0;
 
     public float speed, angle, riseMultiplier, slowMultiplier, maxSpeed;
+
+    float prevXAngle;
+    float prevZAngle;
+    float currentXAngle;
+    float currentZAngle;
+    float deltaXAngle;
+    float deltaZAngle;
+    float rotationXProgress = 0.0f;
+    float rotationZProgress = 0.0f;
     //Animator animator
     bool isOnGround = false;
     private void Start()
@@ -32,6 +41,11 @@ public class DroneMovement : MonoBehaviour
         
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         PlayerPrefs.SetInt("SelfLevelling", 0);
+
+        prevXAngle = transform.eulerAngles.x;
+        prevZAngle = transform.eulerAngles.z;
+        currentXAngle  = transform.eulerAngles.x;
+        currentZAngle = transform.eulerAngles.z;
     }
 
     void Controls()
@@ -181,6 +195,7 @@ public class DroneMovement : MonoBehaviour
         transform.localEulerAngles = Vector3.back * leftRightAngle + Vector3.right * forwardBackAngle + Vector3.up * yAxisAngle;
         propeller1.gameObject.transform.localEulerAngles += Vector3.up * maxRotSpeed * upDownAxis;
         propeller2.gameObject.transform.localEulerAngles += Vector3.up * maxRotSpeed * upDownAxis;
+        checkForFlip();
     }
 
     private void FixedUpdate()
@@ -231,5 +246,21 @@ public class DroneMovement : MonoBehaviour
         rotateInput = ctx.ReadValue<float>(); //reads direction
     }
 
+    void checkForFlip()
+    {
+        currentXAngle = transform.eulerAngles.x;
+        currentZAngle = transform.eulerAngles.z;
+        deltaXAngle = Mathf.DeltaAngle(prevXAngle, currentXAngle);
+        deltaZAngle = Mathf.DeltaAngle(prevZAngle, currentZAngle);
+        rotationXProgress += Mathf.Abs(deltaXAngle);
+        rotationZProgress += Mathf.Abs(deltaZAngle);
+        prevXAngle = currentXAngle;
+        prevZAngle = currentZAngle;
 
+
+        if (rotationXProgress >= 360f || rotationZProgress >= 360f)
+        {
+            PlayerPrefs.SetInt("Flipped", 1);
+        }
+    }
 }
