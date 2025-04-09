@@ -52,6 +52,13 @@ public class FireObstacle : MonoBehaviour
         {
             movementSlow = true;
         }
+        
+        else if (other.tag == null)
+        {
+            PlayerPrefs.SetInt("Didn't touch lava", 1);
+            Debug.Log("Achievement Unlocked");
+        }
+        
     }
 
     private void OnParticleTrigger()
