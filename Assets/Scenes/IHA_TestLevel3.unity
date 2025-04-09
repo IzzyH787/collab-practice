@@ -5322,6 +5322,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -60.43036
       objectReference: {fileID: 0}
+    - target: {fileID: 2474752201984512965, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2825391316064372215, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_Name
       value: LevelEssentials3

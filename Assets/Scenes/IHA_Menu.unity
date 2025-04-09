@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnLevelIntro1
       objectReference: {fileID: 0}
+    - target: {fileID: 2179989510403403990, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2825391316064372215, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_Name
       value: LevelEssentials3

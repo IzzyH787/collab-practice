@@ -52,5 +52,11 @@ public class TriggerLavaRise : MonoBehaviour
 
         }
 
+        if (lava.CompareTag("Player"))
+        {
+            PlayerPrefs.SetInt("Drop in lava", 1);
+            Debug.Log("Achievement Unlocked");
+        }
+
     }
 }
