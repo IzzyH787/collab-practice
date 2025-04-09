@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     public Text finalTimeDisplay;
     public bool showInGamePanel = true;
     float startTime = 0;
-
+    public int levelNum;
     public AchievementManager achievementManager;
 
     // Start is called before the first frame update
@@ -197,9 +197,36 @@ public class LevelManager : MonoBehaviour
         //Change the discount text if the lap is completed under two minutes
         if (completionTime <= timeLimitForAchievement)
         {
-            Debug.Log("AchievementManager Unlocked");
-            achievementManager.IsLv1Complete = true;
+            Debug.Log("Achievement Unlocked");
+            //achievementManager.IsLv1Complete = true;
+            if (levelNum == 1)
+            {
+                PlayerPrefs.SetInt("IsLv1Complete", 1);
+            }
+            else if (levelNum == 2)
+            {
+                PlayerPrefs.SetInt("IsLv2Complete", 1);
+            }
+            else if (levelNum == 3)
+            {
+                PlayerPrefs.SetInt("IsLv3Complete", 1);
+            }
+            if (PlayerPrefs.GetInt("IsLv1Complete") == 1 && PlayerPrefs.GetInt("IsLv2Complete") == 1 && PlayerPrefs.GetInt("IsLv3Complete") == 1)
+            {
+                PlayerPrefs.SetInt("IsAllLevelsComplete", 1);
+            }
+            //PlayerPrefs.GetInt("IsLv1Complete");
         }
+
+        if (completionTime <= 60)
+        {
+            Debug.Log("Achievement1 Unlocked");
+            if (PlayerPrefs.GetInt("IsLv1Complete") == 1 && PlayerPrefs.GetInt("IsLv2Complete") == 1 && PlayerPrefs.GetInt("IsLv3Complete") == 1)
+            {
+                PlayerPrefs.SetInt("IsAllLevelsCompletein1min", 1);
+            }
+        }
+
         else
         {
 

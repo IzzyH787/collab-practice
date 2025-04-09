@@ -10,10 +10,10 @@ public class AchievementManager : MonoBehaviour
     public bool IsAllComplete = false;
     public bool IsAllComplete1 = false;
     public bool IsLvController = false;
-    public bool IsLava = false;
+    public bool IsLavaDrop = false;
     public bool IsStar = false;
     public bool IsFlip = false;
-    public bool IsSomething = false;
+    public bool IsLavaTouch = false;
 
     // Start is called before the first frame update
     void Start()

@@ -2857,8 +2857,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 60dbb78453ae6904fbd24b659a8b1ac9, type: 3}
     - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2720051
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32911968
+      value: 0.32912016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000001937151
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5700873766091297438, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_IsActive
@@ -2875,6 +2899,10 @@ PrefabInstance:
     - target: {fileID: 7275127690133194527, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.654088
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256567026429435169, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: levelNum
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8256567026429435169, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: lastHoopNumber
