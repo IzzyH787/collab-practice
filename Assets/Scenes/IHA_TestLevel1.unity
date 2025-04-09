@@ -2886,6 +2886,16 @@ MonoBehaviour:
   level2LevelPlayButton: {fileID: 341759617}
   level3BackButton: {fileID: 461675416}
   level3LevelPlayButton: {fileID: 957766875}
+  homeWebPageButton: {fileID: 0}
+  achievementsButton: {fileID: 0}
+  ticketsButton: {fileID: 0}
+  pauseResumeButton: {fileID: 0}
+  pauseSettingsButton: {fileID: 0}
+  pauseQuitButton: {fileID: 0}
+  levelOverLevelSelectButton: {fileID: 0}
+  levelOverGetTicketButton: {fileID: 0}
+  levelOverAchievementsButton: {fileID: 0}
+  HUDPauseButton: {fileID: 0}
   deuteranopiaOnOffToggle: {fileID: 1082996021}
   tritanopiaOnOffToggle: {fileID: 1574437165}
 --- !u!4 &1572971865
@@ -3215,6 +3225,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 1.688
       objectReference: {fileID: 0}
+    - target: {fileID: 1179895099859501360, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1385722803151747302, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2719991
@@ -3287,6 +3301,10 @@ PrefabInstance:
       propertyPath: angle
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4427659216685111707, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4688539194051282654, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: BGM
       value: 
@@ -3318,6 +3336,30 @@ PrefabInstance:
     - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700873766091297438, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054264350423489955, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054264350423489955, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843602803521466856, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843602803521466856, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843602803521466856, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256567026429435169, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: lastHoopNumber
