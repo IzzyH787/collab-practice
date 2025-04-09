@@ -175,7 +175,7 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 0; //pause timer
         hud.SetActive(false); //hide hud
-                                           //show level over screen
+                              //show level over screen
         levelOverScreen.SetActive(true);
         //set default button
         eventSystem.firstSelectedGameObject = continueBtn;
@@ -195,40 +195,125 @@ public class LevelManager : MonoBehaviour
         finalTimeDisplay.text = displayText;
 
         //Change the discount text if the lap is completed under two minutes
-        if (completionTime <= timeLimitForAchievement)
+
+        /////////////CHECKS FOR LEVELS INDIVIDUALLY COMPLETE/////////////////
+        ///
+        ////////LEVEL 1////////////
+        if (levelNum == 1)
         {
-            Debug.Log("Achievement Unlocked");
-            //achievementManager.IsLv1Complete = true;
-            if (levelNum == 1)
+            PlayerPrefs.SetInt("IsLv1Complete", 1); //level 1 complete
+            //acro mode 
+            if (PlayerPrefs.GetInt("SelfLeveling") == 0)
             {
-                PlayerPrefs.SetInt("IsLv1Complete", 1);
+                PlayerPrefs.SetInt("IsLv1CompleteAcro", 1);
             }
+            //self levelling mode
+            else
+            {
+                PlayerPrefs.SetInt("IsLv1CompleteSL", 1);
+            }
+            ////////CHECK IF COMPLETED IN TIME///////////
+            if (completionTime <= 60)
+            {
+                PlayerPrefs.SetInt("IsLv1CompleteInTimer", 1);
+                PlayerPrefs.SetInt("IsLv1CompleteInMin", 1);
+            }
+            else if (completionTime <= timeLimitForAchievement)
+            {
+                PlayerPrefs.SetInt("IsLv1CompleteInTimer", 1);
+            }
+
+
+            ////////LEVEL 2////////////
             else if (levelNum == 2)
             {
                 PlayerPrefs.SetInt("IsLv2Complete", 1);
+                //acro mode 
+                if (PlayerPrefs.GetInt("SelfLeveling") == 0)
+                {
+                    PlayerPrefs.SetInt("IsLv2CompleteAcro", 1);
+                }
+                //self levelling mode
+                else
+                {
+                    PlayerPrefs.SetInt("IsLv2CompleteSL", 1);
+                }
+                ////////CHECK IF COMPLETED IN TIME///////////
+                if (completionTime <= 60)
+                {
+                    PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
+                    PlayerPrefs.SetInt("IsLv2CompleteInMin", 1);
+                }
+                else if (completionTime <= timeLimitForAchievement)
+                {
+                    PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
+                }
             }
+
+
+            ////////LEVEL 3////////////
             else if (levelNum == 3)
             {
                 PlayerPrefs.SetInt("IsLv3Complete", 1);
+                //acro mode 
+                if (PlayerPrefs.GetInt("SelfLeveling") == 0)
+                {
+                    PlayerPrefs.SetInt("IsLv3CompleteAcro", 1);
+                }
+                //self levelling mode
+                else
+                {
+                    PlayerPrefs.SetInt("IsLv3CompleteSL", 1);
+                }
+                ////////CHECK IF COMPLETED IN TIME///////////
+                if (completionTime <= 60)
+                {
+                    PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
+                    PlayerPrefs.SetInt("IsLv3CompleteInMin", 1);
+                }
+                else if (completionTime <= timeLimitForAchievement)
+                {
+                    PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
+                }
             }
+            /////////////////////CHECK IF ALL LEVELS COMPLETE//////////////////////////
             if (PlayerPrefs.GetInt("IsLv1Complete") == 1 && PlayerPrefs.GetInt("IsLv2Complete") == 1 && PlayerPrefs.GetInt("IsLv3Complete") == 1)
             {
                 PlayerPrefs.SetInt("IsAllLevelsComplete", 1);
+                //////////////////CHECK IF ALL LEVELS COMPLETE IN BOTH MODES/////////////////////
+                if (checkPref("IsLv1CompleteAcro") && checkPref("IsLv2CompleteAcro") && checkPref("IsLv3CompleteAcro") && checkPref("IsLv1CompleteSL") && checkPref("IsLv2CompleteSL") && checkPref("IsLv3CompleteSL"))
+                {
+                    PlayerPrefs.SetInt("IsAllModesComplete", 1);
+                }
+                ///////////////CHECK IF ALL LEVELS COMPLETE IN 1 MIN//////////////////
+                if (checkPref("IsLv1CompleteInMin") && checkPref("IsLv2CompleteInMin") && checkPref("IsLv3CompleteInMin"))
+                {
+                    PlayerPrefs.SetInt("IsAllLevelsCompletein1min", 1);
+                }
             }
-            //PlayerPrefs.GetInt("IsLv1Complete");
-        }
 
-        if (completionTime <= 60)
-        {
-            Debug.Log("Achievement1 Unlocked");
-            if (PlayerPrefs.GetInt("IsLv1Complete") == 1 && PlayerPrefs.GetInt("IsLv2Complete") == 1 && PlayerPrefs.GetInt("IsLv3Complete") == 1)
+
+
+
+            /*if (completionTime <= 60)
             {
-                PlayerPrefs.SetInt("IsAllLevelsCompletein1min", 1);
-            }
-        }
-
-        else
-        {
+                if (levelNum == 1)
+                {
+                    PlayerPrefs.SetInt("IsLv1CompleteInMin", 1);
+                }
+                else if (levelNum == 2)
+                {
+                    PlayerPrefs.SetInt("IsLv2CompleteInMin", 1);
+                }
+                else if (levelNum == 3)
+                {
+                    PlayerPrefs.SetInt("IsLv3CompleteInMin", 1);
+                }
+                if (PlayerPrefs.GetInt("IsLv1CompleteInMin") == 1 && PlayerPrefs.GetInt("IsLv2CompleteInTimer") == 1 && PlayerPrefs.GetInt("IsLv3CompleteInTimer") == 1)
+                {
+                    PlayerPrefs.SetInt("IsAllLevelsCompletein1min", 1);
+                }
+            }*/
 
         }
     }
@@ -245,6 +330,10 @@ public class LevelManager : MonoBehaviour
         Application.OpenURL("https://www.btwclub.co.uk/events/bird-2025");
     }
 
+    bool checkPref(string prefName)
+    {
+        return (PlayerPrefs.GetInt(prefName) == 1);
+    }
     //Open the option menu in title screen
     public void OnStartScreenOptionMenu()
     {
