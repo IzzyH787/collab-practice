@@ -20,6 +20,7 @@ public class SCH_starCollision : MonoBehaviour
         {
             if (collision.gameObject == droneObj)
             {
+                PlayerPrefs.SetInt("IsStarReached", 1);
                 Debug.Log("You became the star!");
                 achievementUnlocked = true;
             }
