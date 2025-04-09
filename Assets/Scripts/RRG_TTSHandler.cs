@@ -30,84 +30,84 @@ public class RRG_TTSHandler : MonoBehaviour
     //functions to play audio on hover
     public void hoverPlay()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         { 
             TTSPlay.Play(0);
         }
     }
     public void hoverQuit()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSQuit.Play(0);
         }
     }
     public void hoverOptions()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSOptions.Play(0);
         }
     }
     public void hoverBack()
     {
-        if (TTSOn) 
+        if (PlayerPrefs.GetInt("TTSOn") == 1) 
         { 
             TTSBack.Play(0);
         }
     }
     public void hoverLevel1()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSLevel1.Play(0);
         }
     }
     public void hoverLevel2()
     {
-        if (TTSOn) 
+        if (PlayerPrefs.GetInt("TTSOn") == 1) 
         { 
             TTSLevel2.Play(0);
         }
     }
     public void hoverLevel3()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSLevel3.Play(0);
         }
     }
     public void hoverSettings()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSSettings.Play(0);
         }
     }
     public void hoverResume()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSResume.Play(0);
         }
     }
     public void hoverSelectLevel()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         { 
             TTSSelectLevel.Play(0);
         }
     }
     public void hoverGetTicket()
     {
-        if (TTSOn) 
+        if (PlayerPrefs.GetInt("TTSOn") == 1) 
         {
             TTSGetTicket.Play(0);
         }
     }
     public void unhoverPlay()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSPlay.Stop();
         }
@@ -115,49 +115,49 @@ public class RRG_TTSHandler : MonoBehaviour
     
     public void unhoverQuit()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSQuit.Stop();
         }
     }
     public void unhoverOptions()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSOptions.Stop();
         }
     }
     public void unhoverBack()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSBack.Stop();
         }
     }
     public void unhoverLevel1()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSLevel1.Stop();
         }
     }
     public void unhoverLevel2()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSLevel2.Stop();
         }
     }
     public void unhoverLevel3()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSLevel3.Stop();
         }
     }
     public void unhoverSettings()
     {
-        if (TTSOn)
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
         {
             TTSSettings.Stop();
         }
