@@ -149,7 +149,7 @@ public class LevelManager : MonoBehaviour
         pausePanel.SetActive(false);
         //open setting menu
         startScreenOptionPanel.SetActive(true);
-//        settingsPanel.SetActive(true);
+        //settingsPanel.SetActive(true);
         //set default button to quit
         eventSystem.firstSelectedGameObject = closeSettingsBtn;
     }

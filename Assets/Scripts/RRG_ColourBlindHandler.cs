@@ -21,6 +21,16 @@ public class RRG_ColourBlindHandler : MonoBehaviour
     [SerializeField] private Button level2LevelPlayButton;
     [SerializeField] private Button level3BackButton;
     [SerializeField] private Button level3LevelPlayButton;
+    [SerializeField] private Button homeWebPageButton;
+    [SerializeField] private Button achievementsButton;
+    [SerializeField] private Button ticketsButton;
+    [SerializeField] private Button pauseResumeButton;
+    [SerializeField] private Button pauseSettingsButton;
+    [SerializeField] private Button pauseQuitButton;
+    [SerializeField] private Button levelOverLevelSelectButton;
+    [SerializeField] private Button levelOverGetTicketButton;
+    [SerializeField] private Button levelOverAchievementsButton;
+    [SerializeField] private Button HUDPauseButton;
 
     [SerializeField] private Toggle deuteranopiaOnOffToggle;
     [SerializeField] private Toggle tritanopiaOnOffToggle;
@@ -87,6 +97,16 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             level2LevelPlayButton.colors = defaultColourCurrentColour;
             level3BackButton.colors = defaultColourCurrentColour;
             level3LevelPlayButton.colors = defaultColourCurrentColour;
+            homeWebPageButton.colors = defaultColourCurrentColour;
+            achievementsButton.colors = defaultColourCurrentColour;
+            ticketsButton.colors = defaultColourCurrentColour;
+            pauseResumeButton.colors = defaultColourCurrentColour;
+            pauseSettingsButton.colors = defaultColourCurrentColour;
+            pauseQuitButton.colors = defaultColourCurrentColour;
+            levelOverAchievementsButton.colors = defaultColourCurrentColour;
+            levelOverGetTicketButton.colors = defaultColourCurrentColour;
+            levelOverLevelSelectButton.colors = defaultColourCurrentColour;
+            HUDPauseButton.colors = defaultColourCurrentColour;
         }
 
         //running in update to avoid bug: when player ticks a colour blind mode when a mode is already selected the colour will default to green.
@@ -138,8 +158,16 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             level2LevelPlayButton.colors = deuteranopiaCurrentColour;
             level3BackButton.colors = deuteranopiaCurrentColour;
             level3LevelPlayButton.colors = deuteranopiaCurrentColour;
-
-
+            homeWebPageButton.colors = deuteranopiaCurrentColour;
+            achievementsButton.colors = deuteranopiaCurrentColour;
+            ticketsButton.colors = deuteranopiaCurrentColour;
+            pauseResumeButton.colors = deuteranopiaCurrentColour;
+            pauseSettingsButton.colors = deuteranopiaCurrentColour;
+            pauseQuitButton.colors = deuteranopiaCurrentColour;
+            levelOverAchievementsButton.colors = deuteranopiaCurrentColour;
+            levelOverGetTicketButton.colors = deuteranopiaCurrentColour;
+            levelOverLevelSelectButton.colors = deuteranopiaCurrentColour;
+            HUDPauseButton.colors = deuteranopiaCurrentColour;
         }
     }
     public void tritanopia()
@@ -162,8 +190,16 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             level2LevelPlayButton.colors = tritanopiaCurrentColour;
             level3BackButton.colors = tritanopiaCurrentColour;
             level3LevelPlayButton.colors = tritanopiaCurrentColour;
-
-
+            homeWebPageButton.colors = tritanopiaCurrentColour;
+            achievementsButton.colors = tritanopiaCurrentColour;
+            ticketsButton.colors = tritanopiaCurrentColour;
+            pauseResumeButton.colors = tritanopiaCurrentColour;
+            pauseSettingsButton.colors = tritanopiaCurrentColour;
+            pauseQuitButton.colors = tritanopiaCurrentColour;
+            levelOverAchievementsButton.colors = tritanopiaCurrentColour;
+            levelOverGetTicketButton.colors = tritanopiaCurrentColour;
+            levelOverLevelSelectButton.colors = tritanopiaCurrentColour;
+            HUDPauseButton.colors = tritanopiaCurrentColour;
         }
     }
     public void deuteranopiaTurnedOn()
