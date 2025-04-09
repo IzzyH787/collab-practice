@@ -137,15 +137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1056696285284188849, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3338623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1056696285284188849, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.055772
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1056696285284188849, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.262222
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2825391316064372215, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_Name
@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2825391316064372215, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3785091074743936524, guid: 45138ab0abb4ff84782f6ab312c9b405, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -228,6 +228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEssentials2
       objectReference: {fileID: 0}
+    - target: {fileID: 2133742377015453009, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3446344611464946645, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_LocalPosition.x
       value: 145.24777
@@ -267,6 +271,10 @@ PrefabInstance:
     - target: {fileID: 3446344611464946645, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245743354692445203, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.32912064
       objectReference: {fileID: 0}
     - target: {fileID: 8256567026429435169, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: showInGamePanel
