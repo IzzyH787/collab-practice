@@ -2556,6 +2556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1179895099859501360, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2133742377015453009, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_Name
       value: LevelEssentials2
@@ -2640,6 +2644,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6054264350423489955, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054264350423489955, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843602803521466856, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843602803521466856, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843602803521466856, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2715,6 +2739,16 @@ MonoBehaviour:
   level2LevelPlayButton: {fileID: 458536305}
   level3BackButton: {fileID: 264427343}
   level3LevelPlayButton: {fileID: 1385668124}
+  homeWebPageButton: {fileID: 0}
+  achievementsButton: {fileID: 0}
+  ticketsButton: {fileID: 0}
+  pauseResumeButton: {fileID: 0}
+  pauseSettingsButton: {fileID: 0}
+  pauseQuitButton: {fileID: 0}
+  levelOverLevelSelectButton: {fileID: 0}
+  levelOverGetTicketButton: {fileID: 0}
+  levelOverAchievementsButton: {fileID: 0}
+  HUDPauseButton: {fileID: 0}
   deuteranopiaOnOffToggle: {fileID: 669452586}
   tritanopiaOnOffToggle: {fileID: 875377013}
 --- !u!4 &2057044497
