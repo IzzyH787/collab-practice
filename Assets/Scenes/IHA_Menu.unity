@@ -1865,10 +1865,10 @@ MonoBehaviour:
   pauseResumeButton: {fileID: 2004637895}
   pauseSettingsButton: {fileID: 575090660}
   pauseQuitButton: {fileID: 37905759}
-  levelOverLevelSelectButton: {fileID: 0}
-  levelOverGetTicketButton: {fileID: 0}
-  levelOverAchievementsButton: {fileID: 0}
-  HUDPauseButton: {fileID: 0}
+  levelOverLevelSelectButton: {fileID: 718530974}
+  levelOverGetTicketButton: {fileID: 2144678452}
+  levelOverAchievementsButton: {fileID: 1404844833}
+  HUDPauseButton: {fileID: 2107586862}
   deuteranopiaOnOffToggle: {fileID: 800428852}
   tritanopiaOnOffToggle: {fileID: 901267678}
 --- !u!1 &383178330
@@ -2650,6 +2650,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &718530974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2788536319303269201, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+  m_PrefabInstance: {fileID: 2119115963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718530968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756177285 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7968029481467927743, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
@@ -3543,6 +3554,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!114 &1404844833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2059756527436611802, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+  m_PrefabInstance: {fileID: 2119115963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1447102523 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8996405877151991417, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
@@ -4519,6 +4541,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2107586862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8928164152890875050, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+  m_PrefabInstance: {fileID: 2119115963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2119115963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4765,6 +4798,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2144678452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4188527914784364959, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+  m_PrefabInstance: {fileID: 2119115963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144678445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
