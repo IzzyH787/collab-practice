@@ -24,7 +24,7 @@ public class RRG_TTSHandler : MonoBehaviour
 
     private void Update()
     {
-        TTSTurnedOn();
+        //TTSTurnedOn();
     }
 
     //functions to play audio on hover
@@ -166,13 +166,23 @@ public class RRG_TTSHandler : MonoBehaviour
     //function ran on toggle switch
     public void TTSTurnedOn()
     {
-        if (TTSOnOffToggle.isOn == false)
+        /* if (TTSOnOffToggle.isOn == false)
+         {
+             TTSOn = false;
+         }
+         if (TTSOnOffToggle.isOn == true)
+         {
+             TTSOn = true;
+         }*/
+        if (TTSOnOffToggle.isOn)
         {
-            TTSOn = false;
+            PlayerPrefs.SetInt("TTSOn", 1);
+            PlayerPrefs.Save();
         }
-        if (TTSOnOffToggle.isOn == true)
+        else
         {
-            TTSOn = true;
+            PlayerPrefs.SetInt("TTSOn", 0);
+            PlayerPrefs.Save();
         }
     }
 

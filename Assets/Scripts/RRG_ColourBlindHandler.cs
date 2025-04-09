@@ -118,10 +118,12 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             deuteranopiaOn = false;
             PlayerPrefs.SetInt("tritanopiaOnOffToggle", 1);
             PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
         if (tritanopiaOnOffToggle.isOn == false)
         {
             PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
         if (deuteranopiaOnOffToggle.isOn == true)
         {
@@ -131,10 +133,12 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             tritanopiaOn = false;
             PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 1);
             PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
         if (deuteranopiaOnOffToggle.isOn == false)
         {
             PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
     }
 
@@ -210,6 +214,7 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             tritanopiaOn = false;
             defaultColourUIBool = true;
             PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
         if (deuteranopiaOnOffToggle.isOn == true)
         {
@@ -219,6 +224,7 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             tritanopiaOn = false;
             PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 1);
             PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
     }
 
@@ -230,6 +236,7 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             deuteranopiaOn = false;
             defaultColourUIBool = true;
             PlayerPrefs.SetInt("tritanopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
         if (tritanopiaOnOffToggle.isOn == true)
         {
@@ -239,6 +246,7 @@ public class RRG_ColourBlindHandler : MonoBehaviour
             deuteranopiaOn = false;
             PlayerPrefs.SetInt("tritanopiaOnOffToggle", 1);
             PlayerPrefs.SetInt("deuteranopiaOnOffToggle", 0);
+            PlayerPrefs.Save();
         }
     }
 }
