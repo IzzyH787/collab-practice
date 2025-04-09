@@ -15,14 +15,12 @@ public class SCH_starCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (PlayerPrefs.GetInt("IsStarReached") == 1)
+        if (collision.gameObject == droneObj)
         {
-            if (collision.gameObject == droneObj)
-            {
-                PlayerPrefs.SetInt("IsStarReached", 1);
-                PlayerPrefs.Save();
-                Debug.Log("You became the star!");
-            }
+            PlayerPrefs.SetInt("IsStarReached", 1);
+            PlayerPrefs.Save();
+            Debug.Log("You became the star!");
+            
         }
     }
     // Update is called once per frame
