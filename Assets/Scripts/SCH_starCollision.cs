@@ -20,6 +20,7 @@ public class SCH_starCollision : MonoBehaviour
             if (collision.gameObject == droneObj)
             {
                 PlayerPrefs.SetInt("IsStarReached", 1);
+                PlayerPrefs.Save();
                 Debug.Log("You became the star!");
             }
         }

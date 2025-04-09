@@ -14,10 +14,12 @@ public class ControlsManager : MonoBehaviour
         if (selfLevellingToggle.isOn)
         {
             PlayerPrefs.SetInt("SelfLevelling", 1);
+            PlayerPrefs.Save();
         }
         else
         {
             PlayerPrefs.SetInt("SelfLevelling", 0);
+            PlayerPrefs.Save();
         }
     }
 }

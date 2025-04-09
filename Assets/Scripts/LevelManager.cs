@@ -296,7 +296,7 @@ public class LevelManager : MonoBehaviour
             if (!hitlava)
             {
                 PlayerPrefs.SetInt("DidntHitLava", 1);
-                Debug.Log("chievement- no lava");
+                Debug.Log("Achievement- no lava");
             }
             PlayerPrefs.SetInt("IsLv3Complete", 1);
             PlayerPrefs.Save();

@@ -45,6 +45,7 @@ public class AudioManager : MonoBehaviour
 
         PlayerPrefs.SetFloat("BGMSource", volume);
         PlayerPrefs.SetFloat("audioSource", volume);
+        PlayerPrefs.Save();
 
         Debug.Log(volume);
     }
