@@ -140,7 +140,7 @@ public class RRG_ColourBlindHandler : MonoBehaviour
 
     public void deuteranopia()
     {
-        if (deuteranopiaOn)
+        if (PlayerPrefs.GetInt("deuteranopiaOnOffToggle") == 1)
         {
             deuteranopiaCurrentColour.highlightedColor = deuteranopiaGreen;
             quitButton.colors = deuteranopiaCurrentColour;
@@ -172,7 +172,7 @@ public class RRG_ColourBlindHandler : MonoBehaviour
     }
     public void tritanopia()
     {
-        if (tritanopiaOn)
+        if (PlayerPrefs.GetInt("tritanopiaOnOffToggle") == 1)
         {
             tritanopiaCurrentColour.highlightedColor = tritanopiaGreen;
             quitButton.colors = tritanopiaCurrentColour;
