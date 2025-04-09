@@ -24,6 +24,7 @@ public class Lava : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerPrefs.SetInt("DropInLava", 1);
+            PlayerPrefs.Save();
             Debug.Log("Achievement Unlocked- in  lava");
             levelManager.hitlava = true;
         }

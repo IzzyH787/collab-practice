@@ -8491,7 +8491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2345104618470300393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10322,7 +10322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3313829937930928374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10434,10 +10434,10 @@ MonoBehaviour:
   - IsAllLevelsComplete
   - IsAllLevelsCompletein1min
   - IsAllModesComplete
-  - 7
+  - DropInLava
   - IsStarReached
-  - 9
-  - 10
+  - Flipped
+  - DidntHitLava
 --- !u!1 &4442164077543408048
 GameObject:
   m_ObjectHideFlags: 0
@@ -14761,9 +14761,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3639231500904248235}
-        m_TargetAssemblyTypeName: RRG_ColourBlindHandler, Assembly-CSharp
-        m_MethodName: tritanopiaTurnedOn
+      - m_Target: {fileID: 426615575618815782}
+        m_TargetAssemblyTypeName: ControlsManager, Assembly-CSharp
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18988,8 +18988,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8318304521623148484, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 426615575618815782}
   m_SourcePrefab: {fileID: 100100000, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
+--- !u!1 &6070929066133830116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8318304521623148484, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
+  m_PrefabInstance: {fileID: 2823977083089169952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &426615575618815782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070929066133830116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d4d5f73fc147a4db9f0ca6251cf44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfLevellingToggle: {fileID: 7150302847108454249}
 --- !u!4 &6765314765134942153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8850683631229559273, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
@@ -19000,7 +19021,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6171620093636129537, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
   m_PrefabInstance: {fileID: 2823977083089169952}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6070929066133830116}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85d782df973f1624ab97ada5b41c01a3, type: 3}
@@ -19164,15 +19185,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8225528657074622165, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}

@@ -40,7 +40,7 @@ public class DroneMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
-        PlayerPrefs.SetInt("SelfLevelling", 1);
+        //PlayerPrefs.SetInt("SelfLevelling", 1);
 
         prevXAngle = transform.eulerAngles.x;
         prevZAngle = transform.eulerAngles.z;
@@ -261,6 +261,7 @@ public class DroneMovement : MonoBehaviour
         if (rotationXProgress >= 360f || rotationZProgress >= 360f)
         {
             PlayerPrefs.SetInt("Flipped", 1);
+            PlayerPrefs.Save();
         }
     }
 }
