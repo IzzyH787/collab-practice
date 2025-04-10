@@ -2781,11 +2781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2575871025055118157, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2575871025055118157, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441758766833727263, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_IsActive
@@ -2833,15 +2833,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4240352236966792806, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4240352236966792806, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4240352236966792806, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688539194051282654, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 9470cc0a64d0a8644be82066a3def658, type: 3}
+    - target: {fileID: 4688539194051282654, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+      propertyPath: volumeSlider
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5069928559782331610, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
       propertyPath: m_IsActive

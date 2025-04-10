@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
         BGMSource.Play();
         sliderValue = 100;
 
-        BGMSource.volume = PlayerPrefs.GetFloat("BGMSource");
+        BGMSource.volume = PlayerPrefs.GetFloat("BGMSource", 0.5f);
     }
 
     private void Update()
