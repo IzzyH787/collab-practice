@@ -24,7 +24,9 @@ public class RRG_TTSHandler : MonoBehaviour
 
     private void Update()
     {
-        //TTSTurnedOn();
+        TTSTurnedOn();
+
+        Debug.Log(PlayerPrefs.GetInt("TTSOn"));
     }
 
     //functions to play audio on hover
@@ -32,7 +34,7 @@ public class RRG_TTSHandler : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("TTSOn") == 1)
         { 
-            TTSPlay.Play(0);
+            TTSPlay.Play();
         }
     }
     public void hoverQuit()
@@ -179,7 +181,7 @@ public class RRG_TTSHandler : MonoBehaviour
             PlayerPrefs.SetInt("TTSOn", 1);
             PlayerPrefs.Save();
         }
-        else
+        if (TTSOnOffToggle.isOn == false)
         {
             PlayerPrefs.SetInt("TTSOn", 0);
             PlayerPrefs.Save();
