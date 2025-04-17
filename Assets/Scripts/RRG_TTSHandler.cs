@@ -164,6 +164,27 @@ public class RRG_TTSHandler : MonoBehaviour
             TTSSettings.Stop();
         }
     }
+    public void unhoverResume()
+    {
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
+        {
+            TTSResume.Stop();
+        }
+    }
+    public void unhoverSelectLevel()
+    {
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
+        {
+            TTSSelectLevel.Stop();
+        }
+    }
+    public void unhoverGetTicket()
+    {
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
+        {
+            TTSGetTicket.Stop();
+        }
+    }
 
     //function ran on toggle switch
     public void TTSTurnedOn()
@@ -181,11 +202,7 @@ public class RRG_TTSHandler : MonoBehaviour
             PlayerPrefs.SetInt("TTSOn", 1);
             PlayerPrefs.Save();
         }
-        if (TTSOnOffToggle.isOn == false)
-        {
-            PlayerPrefs.SetInt("TTSOn", 0);
-            PlayerPrefs.Save();
-        }
+        
     }
 
 }

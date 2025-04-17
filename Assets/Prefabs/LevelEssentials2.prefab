@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 3017460788167689304}
   - component: {fileID: 2083395127135004674}
   - component: {fileID: 5117502646067678262}
+  - component: {fileID: 6532909069319388252}
   m_Layer: 5
   m_Name: Btn_Quit
   m_TagString: Untagged
@@ -498,6 +499,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6532909069319388252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202040718395777340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverQuit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverQuit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &259698468751754250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +1915,7 @@ GameObject:
   - component: {fileID: 5215969918316926165}
   - component: {fileID: 8766472550014571704}
   - component: {fileID: 4188527914784364959}
+  - component: {fileID: 968580863367738593}
   m_Layer: 5
   m_Name: Btn_GetTicket
   m_TagString: Untagged
@@ -1990,6 +2037,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &968580863367738593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290494288387112269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverGetTicket
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverGetTicket
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1321390533104024341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4545,6 +4637,7 @@ GameObject:
   - component: {fileID: 4595003943043628970}
   - component: {fileID: 5352326004774896250}
   - component: {fileID: 2788536319303269201}
+  - component: {fileID: 533260440622767719}
   m_Layer: 5
   m_Name: Btn_LevelSelect
   m_TagString: Untagged
@@ -4666,6 +4759,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &533260440622767719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035847497961284819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverSelectLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverSelectLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2050177940684673557
 GameObject:
   m_ObjectHideFlags: 0
@@ -5364,6 +5502,7 @@ GameObject:
   - component: {fileID: 7837393092335062573}
   - component: {fileID: 4265653110094358335}
   - component: {fileID: 8549464819969044011}
+  - component: {fileID: 8900008650274815067}
   m_Layer: 5
   m_Name: Btn_GetTicket
   m_TagString: Untagged
@@ -5485,6 +5624,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8900008650274815067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461031026898819801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverGetTicket
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverGetTicket
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2511156050771600746
 GameObject:
   m_ObjectHideFlags: 0
@@ -16473,6 +16657,7 @@ GameObject:
   - component: {fileID: 1732544281539742115}
   - component: {fileID: 3423184639029540769}
   - component: {fileID: 1763654858423779970}
+  - component: {fileID: 7692140052474672649}
   m_Layer: 5
   m_Name: Btn_LevelSelect
   m_TagString: Untagged
@@ -16594,6 +16779,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7692140052474672649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691353276152758061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverSelectLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverSelectLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7815445649898150856
 GameObject:
   m_ObjectHideFlags: 0
@@ -17741,6 +17971,7 @@ GameObject:
   - component: {fileID: 563628999439263617}
   - component: {fileID: 6905287958441109030}
   - component: {fileID: 7971510139493961670}
+  - component: {fileID: 2297133398695169901}
   m_Layer: 5
   m_Name: Btn_Settings
   m_TagString: Untagged
@@ -17862,6 +18093,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2297133398695169901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670285963708400865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverSettings
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverSettings
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8815325823189816623
 GameObject:
   m_ObjectHideFlags: 0
@@ -17874,6 +18150,7 @@ GameObject:
   - component: {fileID: 1997729852937241858}
   - component: {fileID: 5869317052794916090}
   - component: {fileID: 7275127690133194527}
+  - component: {fileID: 2104887034524510583}
   m_Layer: 5
   m_Name: Btn_Resume
   m_TagString: Untagged
@@ -17995,6 +18272,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2104887034524510583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815325823189816623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: hoverResume
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8895699915940377992}
+          m_TargetAssemblyTypeName: RRG_TTSHandler, Assembly-CSharp
+          m_MethodName: unhoverResume
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8836180556317809294
 GameObject:
   m_ObjectHideFlags: 0
