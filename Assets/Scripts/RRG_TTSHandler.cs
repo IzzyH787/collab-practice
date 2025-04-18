@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,11 +23,29 @@ public class RRG_TTSHandler : MonoBehaviour
 
     private bool TTSOn = false;
 
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
+        if (PlayerPrefs.GetInt("TTSOn") == 1)
+        {
+            TTSOnOffToggle.isOn = true;
+        }
+        if (PlayerPrefs.GetInt("TTSOn") == 0)
+        {
+            TTSOnOffToggle.isOn = false;
+        }
+
         TTSTurnedOn();
 
         Debug.Log(PlayerPrefs.GetInt("TTSOn"));
+    }
+
+    private void Awake()
+    {
+        
     }
 
     //functions to play audio on hover
@@ -202,7 +221,17 @@ public class RRG_TTSHandler : MonoBehaviour
             PlayerPrefs.SetInt("TTSOn", 1);
             PlayerPrefs.Save();
         }
+
+        if (!TTSOnOffToggle.isOn)
+        {
+            PlayerPrefs.SetInt("TTSOn", 0);
+            PlayerPrefs.Save();
+        }
+      
         
+       
+        
+
     }
 
 }

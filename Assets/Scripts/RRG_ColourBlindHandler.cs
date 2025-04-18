@@ -73,6 +73,23 @@ public class RRG_ColourBlindHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPrefs.GetInt("tritanopiaOnOffToggle") == 1)
+        {
+            tritanopiaOnOffToggle.isOn = true;
+        }
+        if (PlayerPrefs.GetInt("tritanopiaOnOffToggle") == 0)
+        {
+            tritanopiaOnOffToggle.isOn = false;
+        }
+        if (PlayerPrefs.GetInt("deuteranopiaOnOffToggle") == 1)
+        {
+            deuteranopiaOnOffToggle.isOn = true;
+        }
+        if (PlayerPrefs.GetInt("deuteranopiaOnOffToggle") == 0)
+        {
+            deuteranopiaOnOffToggle.isOn = false;
+        }
+
         deuteranopia();
         //deuteranopiaTurnedOn();
 

@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         sliderValue = volumeSlider.value;
+        volumeSlider.value = PlayerPrefs.GetFloat("BGMSource");
     }
 
     public void PlayAudio(AudioClip clip)
