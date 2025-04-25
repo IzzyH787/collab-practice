@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
     float startTime = 0;
     public int levelNum;
     public AchievementManager achievementManager;
-
+    public AchievementsGUI achievements;
     public bool hitlava;
 
     [SerializeField] private Toggle deuteranopiaOnOffToggle;
@@ -68,6 +68,8 @@ public class LevelManager : MonoBehaviour
         sceneStartPanel.SetActive(showInGamePanel);
         //auto selectplay button
         eventSystem.firstSelectedGameObject = sceneStartBtn;
+
+
     }
 
 
@@ -356,7 +358,32 @@ public class LevelManager : MonoBehaviour
     //Link to the Buy Ticket page
     public void OnGetTicket()
     {
-        Application.OpenURL("https://www.btwclub.co.uk/events/bird-2025");
+
+        
+        if (achievements.achieved == 10)
+        {
+            Application.OpenURL("https://www.btwclub.co.uk/bird/?achievementcode=hfnskvb2");
+        }
+        else if (achievements.achieved >= 8)
+        {
+            Application.OpenURL("https://www.btwclub.co.uk/bird/?achievementcode=ouhbvf4");
+        }
+        else if (achievements.achieved >= 6)
+        {
+            Application.OpenURL("https://www.btwclub.co.uk/bird/?achievementcode=zkhbed6");
+        }
+        else if (achievements.achieved >= 4)
+        {
+            Application.OpenURL("https://www.btwclub.co.uk/bird/?achievementcode=ouhbvf4");
+        }
+        else if (achievements.achieved >= 2)
+        {
+            Application.OpenURL("https://www.btwclub.co.uk/bird/?achievementcode=hfnskvb2");
+        }
+        else
+        {    
+            Application.OpenURL("https://www.btwclub.co.uk/bird/");           
+        }
     }
 
     bool checkPref(string prefName)

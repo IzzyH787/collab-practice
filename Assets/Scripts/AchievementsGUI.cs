@@ -8,6 +8,7 @@ public class AchievementsGUI : MonoBehaviour
     [SerializeField]GameObject[] Achievements;
     [SerializeField]GameObject[] CompletedTexts;
     [SerializeField] string[] AchievementsPrefNames;
+    public int achieved;
 
     void Awake()
     {
@@ -16,6 +17,7 @@ public class AchievementsGUI : MonoBehaviour
 
     void Start()
     {
+        achieved = 0;
         UpdateAchievements();
     }
 
@@ -39,6 +41,7 @@ public class AchievementsGUI : MonoBehaviour
                 achievementPanel.GetComponent<Outline>().effectColor = Color.yellow;
 
                 completedText.SetActive(true);
+                achieved++;
             }
         }
     }
