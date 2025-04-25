@@ -46,6 +46,8 @@ public class DroneMovement : MonoBehaviour
         prevZAngle = transform.eulerAngles.z;
         currentXAngle  = transform.eulerAngles.x;
         currentZAngle = transform.eulerAngles.z;
+
+        Debug.Log(PlayerPrefs.GetInt("SelfLevelling"));
     }
 
     void Controls()
