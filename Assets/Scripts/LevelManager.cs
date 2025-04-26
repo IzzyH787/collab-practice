@@ -56,6 +56,13 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         startTime = Time.time;
+
+        // Restore level number
+        if (PlayerPrefs.HasKey("levelNum"))
+        {
+            levelNum = PlayerPrefs.GetInt("levelNum");
+        }
+
         //hide all  uis
         startScreen.SetActive(!showInGamePanel);
         levelSelector.SetActive(false);
@@ -111,6 +118,8 @@ public class LevelManager : MonoBehaviour
     public void OnLevel1()
     {
         Time.timeScale = 1; //make timer continue
+        PlayerPrefs.SetInt("levelNum", 1);
+        PlayerPrefs.Save();
         //load level 1
         SceneManager.LoadScene(1);
         //set default button to pause
@@ -118,12 +127,16 @@ public class LevelManager : MonoBehaviour
     public void OnLevel2()
     {
         Time.timeScale = 1; //make timer continue
+        PlayerPrefs.SetInt("levelNum", 2);
+        PlayerPrefs.Save();
         //load level 2
         SceneManager.LoadScene(2);
     }
     public void OnLevel3()
     {
         Time.timeScale = 1; //make timer continue
+        PlayerPrefs.SetInt("levelNum", 3);
+        PlayerPrefs.Save();
         //load level 3
         SceneManager.LoadScene(3);
         //set default button to pause
@@ -197,7 +210,7 @@ public class LevelManager : MonoBehaviour
     }
     public void OnLevelComplete()
     {
-        
+        Debug.Log("OnLevelComplete() called");
         Time.timeScale = 0; //pause timer
         hud.SetActive(false); //hide hud
                               //show level over screen
@@ -218,7 +231,7 @@ public class LevelManager : MonoBehaviour
             displayText = minutes + ":0" + seconds;
         }
         finalTimeDisplay.text = displayText;
-        Debug.Log(levelNum);
+        Debug.Log("Current level number: " + levelNum);
         //Change the discount text if the lap is completed under two minutes
 
         /////////////CHECKS FOR LEVELS INDIVIDUALLY COMPLETE/////////////////
