@@ -46,6 +46,8 @@ public class LevelManager : MonoBehaviour
     public int levelNum;
     public AchievementManager achievementManager;
     public AchievementsGUI achievements;
+    public GameObject audioManagerObj;
+    private AudioManager audioManager;
     public bool hitlava;
 
     [SerializeField] private Toggle deuteranopiaOnOffToggle;
@@ -56,6 +58,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         startTime = Time.time;
+        audioManager = audioManagerObj.GetComponent<AudioManager>();
 
         // Restore level number
         if (PlayerPrefs.HasKey("levelNum"))
@@ -63,7 +66,7 @@ public class LevelManager : MonoBehaviour
             levelNum = PlayerPrefs.GetInt("levelNum");
         }
 
-        //hide all  uis
+        //hide all uis
         startScreen.SetActive(!showInGamePanel);
         levelSelector.SetActive(false);
         hud.SetActive(false);
@@ -214,6 +217,7 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("OnLevelComplete() called");
         Time.timeScale = 0; //pause timer
+        audioManager.ChangeBGM(); //Change the BGM to the level completed BGM
         hud.SetActive(false); //hide hud
                               //show level over screen
         levelOverScreen.SetActive(true);

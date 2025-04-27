@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip BGM;
     public AudioClip Hoop;
     public AudioClip Leveldone;
+    public AudioClip LevelCompletedBGM;
 
     public Slider volumeSlider;
 
@@ -24,12 +25,19 @@ public class AudioManager : MonoBehaviour
         sliderValue = 100;
 
         BGMSource.volume = PlayerPrefs.GetFloat("BGMSource", 0.5f);
+        BGMSource.loop = true; //Allow the BGM to loop
     }
 
     private void Update()
     {
         sliderValue = volumeSlider.value;
         volumeSlider.value = PlayerPrefs.GetFloat("BGMSource");
+    }
+
+    public void ChangeBGM()
+    {
+        BGMSource.clip = LevelCompletedBGM;
+        BGMSource.Play();
     }
 
     public void PlayAudio(AudioClip clip)

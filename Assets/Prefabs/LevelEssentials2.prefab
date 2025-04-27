@@ -19889,6 +19889,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9161820497973183270}
     - target: {fileID: 6171620093636129537, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
+      propertyPath: audioManagerObj
+      value: 
+      objectReference: {fileID: 1649744625663820223}
+    - target: {fileID: 6171620093636129537, guid: e1c6d128b15ab634f872e1962474ebb7, type: 3}
       propertyPath: levelOverScreen
       value: 
       objectReference: {fileID: 3584258348041599549}
@@ -20140,15 +20144,15 @@ PrefabInstance:
       objectReference: {fileID: 17947954771229963}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2720051
+      value: 63.094257
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28548336
+      value: -7.0042286
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.000001937151
+      value: -47.168148
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20407,6 +20411,10 @@ PrefabInstance:
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 6574089230002191031}
+    - target: {fileID: 4606088911443998330, guid: f876d2e206e2a134da03a6c04ef98e6f, type: 3}
+      propertyPath: LevelCompletedBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 9470cc0a64d0a8644be82066a3def658, type: 3}
     - target: {fileID: 7500750697015357723, guid: f876d2e206e2a134da03a6c04ef98e6f, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -20416,12 +20424,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f876d2e206e2a134da03a6c04ef98e6f, type: 3}
+--- !u!1 &1649744625663820223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7500750697015357723, guid: f876d2e206e2a134da03a6c04ef98e6f, type: 3}
+  m_PrefabInstance: {fileID: 9150493088883437732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4688539194051282654 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4606088911443998330, guid: f876d2e206e2a134da03a6c04ef98e6f, type: 3}
   m_PrefabInstance: {fileID: 9150493088883437732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1649744625663820223}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48ea144dee904b4499ce755b9b3fcf86, type: 3}
