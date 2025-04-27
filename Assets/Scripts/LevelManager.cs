@@ -199,6 +199,7 @@ public class LevelManager : MonoBehaviour
     {
         //hide paused menu
         pausePanel.SetActive(false);
+        audioManager.ChangeBGM();
         //hide hud
         hud.SetActive(false);
         //return to level selector
