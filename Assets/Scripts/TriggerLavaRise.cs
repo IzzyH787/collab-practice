@@ -43,7 +43,7 @@ public class TriggerLavaRise : MonoBehaviour
         }
     }
 
-/*    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //if colliding with player and is the target hoop 
         if (other.gameObject.CompareTag("Player"))
@@ -58,5 +58,5 @@ public class TriggerLavaRise : MonoBehaviour
             Debug.Log("Achievement Unlocked- in  lava");
         }
 
-    }*/
+    }
 }
