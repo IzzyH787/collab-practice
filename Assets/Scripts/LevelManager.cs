@@ -62,6 +62,7 @@ public class LevelManager : MonoBehaviour
         {
             levelNum = PlayerPrefs.GetInt("levelNum");
         }
+        
 
         //hide all  uis
         startScreen.SetActive(!showInGamePanel);
