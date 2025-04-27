@@ -232,10 +232,9 @@ MonoBehaviour:
   windDirectionX: -0.1
   windDirectionY: -0.01
   windDirectionZ: -0.04
-  droneObj: {fileID: 1583704537}
+  droneObj: {fileID: 1251235262}
   windMagnitude: 3
-  windBlowingSound: {fileID: 8300000, guid: ff0095602a5631c4391f3cbec495d6d3, type: 3}
-  audioManagerObj: {fileID: 181560287}
+  audioManagerObj: {fileID: 1993630810}
 --- !u!65 &59769546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -620,11 +619,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147950385}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &181560287 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1649744625663820223, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
-  m_PrefabInstance: {fileID: 1567291506}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216108892
 GameObject:
   m_ObjectHideFlags: 0
@@ -13885,7 +13879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3502310942723435919, guid: 2a18335572dff524493dfb620909da7f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.64347
+      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 3502310942723435919, guid: 2a18335572dff524493dfb620909da7f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15614,11 +15608,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 437824835}
   m_SourcePrefab: {fileID: 100100000, guid: 0cce52e3942b99943aa085c3c6c7f94e, type: 3}
---- !u!1 &1583704537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 43888527229505712, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
-  m_PrefabInstance: {fileID: 1567291506}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1592941542 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8256567026429435169, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
@@ -16904,6 +16893,11 @@ PrefabInstance:
       addedObject: {fileID: 875377012}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+--- !u!1 &1993630810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1649744625663820223, guid: 9ff316b32ccd3d641a11783b8734f552, type: 3}
+  m_PrefabInstance: {fileID: 1993630809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1995826631
 PrefabInstance:
   m_ObjectHideFlags: 0

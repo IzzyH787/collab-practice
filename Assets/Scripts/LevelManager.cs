@@ -268,6 +268,11 @@ public class LevelManager : MonoBehaviour
                 PlayerPrefs.SetInt("IsLv1CompleteInMin", 1);
                 PlayerPrefs.Save();
             }
+            else if (completionTime <= 120)
+            {
+                PlayerPrefs.SetInt("IsLv1CompleteInMin", 1);
+                PlayerPrefs.Save();
+            }
             else if (completionTime <= timeLimitForAchievement)
             {
                 PlayerPrefs.SetInt("IsLv1CompleteInTimer", 1);
@@ -295,15 +300,10 @@ public class LevelManager : MonoBehaviour
                 PlayerPrefs.Save();
             }
             ////////CHECK IF COMPLETED IN TIME///////////
-            if (completionTime <= 60)
+           if (completionTime <= timeLimitForAchievement)
             {
                 PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
                 PlayerPrefs.SetInt("IsLv2CompleteInMin", 1);
-                PlayerPrefs.Save();
-            }
-            else if (completionTime <= timeLimitForAchievement)
-            {
-                PlayerPrefs.SetInt("IsLv2CompleteInTimer", 1);
                 PlayerPrefs.Save();
             }
         }
@@ -333,15 +333,10 @@ public class LevelManager : MonoBehaviour
                 PlayerPrefs.Save();
             }
             ////////CHECK IF COMPLETED IN TIME///////////
-            if (completionTime <= 60)
+            if (completionTime <= timeLimitForAchievement)
             {
                 PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
                 PlayerPrefs.SetInt("IsLv3CompleteInMin", 1);
-                PlayerPrefs.Save();
-            }
-            else if (completionTime <= timeLimitForAchievement)
-            {
-                PlayerPrefs.SetInt("IsLv3CompleteInTimer", 1);
                 PlayerPrefs.Save();
             }
         }

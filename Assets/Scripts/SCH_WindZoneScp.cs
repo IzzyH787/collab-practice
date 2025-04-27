@@ -14,7 +14,6 @@ public class SCH_WindZoneScp : MonoBehaviour
     public GameObject droneObj; //The drone object
     public float windMagnitude = 3f; //Magnitude of the wind
 
-    public AudioClip windBlowingSound;
     public GameObject audioManagerObj;
     private AudioManager audioManagerScp;
 
@@ -38,7 +37,7 @@ public class SCH_WindZoneScp : MonoBehaviour
         {
             Debug.Log("Collision enter.");
             insideWindArea = true;
-            audioManagerScp.PlayAudio(windBlowingSound);
+            audioManagerScp.PlaySoundEffectBGM();
         }
     }
 
@@ -48,6 +47,7 @@ public class SCH_WindZoneScp : MonoBehaviour
         {
             Debug.Log("Collision exit.");
             insideWindArea = false;
+            audioManagerScp.StopSoundEffectBGM();
         }
     }
 
