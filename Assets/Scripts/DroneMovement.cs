@@ -206,7 +206,8 @@ public class DroneMovement : MonoBehaviour
         float forwardRad = forwardBackAngle * Mathf.Deg2Rad;
         float leftRad = leftRightAngle * Mathf.Deg2Rad;
         //rb.AddRelativeForce(leftRightAxis * leftRightInput, upDownAxis + gravityForce, forwardBackwardAxis * forwardBackInput);
-        rb.AddRelativeForce(upDownAxis * Mathf.Sin(leftRad) , (upDownAxis * Mathf.Cos(forwardRad)) + (upDownAxis * Mathf.Cos(leftRad)) + gravityForce, upDownAxis * Mathf.Sin(forwardRad));
+        rb.AddRelativeForce(upDownAxis * Mathf.Sin(leftRad) , (upDownAxis * Mathf.Cos(forwardRad)) + (upDownAxis * Mathf.Cos(leftRad)) , upDownAxis * Mathf.Sin(forwardRad));
+        rb.AddForce(0, gravityForce, 0);
         //cap speed
         if (rb.velocity.x > maxSpeed)
         {
