@@ -33,6 +33,7 @@ public class AchievementsGUI : MonoBehaviour
         GameObject completedText;
         for (int i = 0; i < 10; i++)
         {
+            //PlayerPrefs.SetInt(AchievementsPrefNames[i], 0);
             if (PlayerPrefs.GetInt(AchievementsPrefNames[i]) == 1)
             {
                 achievementPanel = Achievements[i];
