@@ -200,6 +200,7 @@ public class LevelManager : MonoBehaviour
         //hide paused menu
         pausePanel.SetActive(false);
         audioManager.ChangeBGM();
+        audioManager.StopSoundEffectBGM();
         //hide hud
         hud.SetActive(false);
         //return to level selector
@@ -219,6 +220,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("OnLevelComplete() called");
         Time.timeScale = 0; //pause timer
         audioManager.ChangeBGM(); //Change the BGM to the level completed BGM
+        audioManager.StopSoundEffectBGM();
         hud.SetActive(false); //hide hud
                               //show level over screen
         levelOverScreen.SetActive(true);
