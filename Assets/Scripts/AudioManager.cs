@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
     {
         sliderValue = volumeSlider.value;
         volumeSlider.value = PlayerPrefs.GetFloat("BGMSource");
+        specialSoundEffectSource.volume = PlayerPrefs.GetFloat("BGMSource", 0.5f);
     }
 
     public void ChangeBGM()
