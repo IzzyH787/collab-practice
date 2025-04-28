@@ -926,7 +926,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Complete all the levels in self levelling mode and acrobatic mode
+  m_Text: Complete all levels in self levelling mode and without
 --- !u!1 &457768351553761067
 GameObject:
   m_ObjectHideFlags: 0
@@ -20464,19 +20464,19 @@ PrefabInstance:
       objectReference: {fileID: 17947954771229963}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.200369
+      value: 0.2720051
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32911968
+      value: 0.32912064
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.5960865
+      value: -0.000001937151
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20484,7 +20484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8816809798117876342, guid: 89bf36235e3c90c42946e4fe8e585f0a, type: 3}
       propertyPath: m_LocalRotation.z

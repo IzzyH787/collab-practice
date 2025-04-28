@@ -74,6 +74,6 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("audioSource", volume);
         PlayerPrefs.Save();
 
-        Debug.Log(volume);
+        //Debug.Log(volume);
     }
 }
