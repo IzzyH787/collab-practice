@@ -40,6 +40,6 @@ public class ControlsManager : MonoBehaviour
             PlayerPrefs.SetInt("SelfLevelling", 0);
             PlayerPrefs.Save();
         }
-        Debug.Log(PlayerPrefs.GetInt("SelfLevelling"));
+        Debug.Log("SelfLevelling = " + PlayerPrefs.GetInt("SelfLevelling"));
     }
 }

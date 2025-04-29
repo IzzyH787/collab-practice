@@ -252,14 +252,16 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("IsLv1Complete", 1); //level 1 complete
             PlayerPrefs.Save();
             //acro mode 
-            if (PlayerPrefs.GetInt("SelfLeveling") == 0)
+            if (PlayerPrefs.GetInt("SelfLevelling") == 0)
             {
+                Debug.Log("LV1 Acro");
                 PlayerPrefs.SetInt("IsLv1CompleteAcro", 1);
                 PlayerPrefs.Save();
             }
             //self levelling mode
             else
             {
+                Debug.Log("LV1 SL");
                 PlayerPrefs.SetInt("IsLv1CompleteSL", 1);
                 PlayerPrefs.Save();
             }
@@ -290,7 +292,7 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("IsLv2Complete", 1);
             PlayerPrefs.Save();
             //acro mode 
-            if (PlayerPrefs.GetInt("SelfLeveling") == 0)
+            if (PlayerPrefs.GetInt("SelfLevelling") == 0)
             {
                 PlayerPrefs.SetInt("IsLv2CompleteAcro", 1);
                 PlayerPrefs.Save();
@@ -323,7 +325,7 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("IsLv3Complete", 1);
             PlayerPrefs.Save();
             //acro mode 
-            if (PlayerPrefs.GetInt("SelfLeveling") == 0)
+            if (PlayerPrefs.GetInt("SelfLevelling") == 0)
             {
                 PlayerPrefs.SetInt("IsLv3CompleteAcro", 1);
                 PlayerPrefs.Save();
@@ -349,7 +351,7 @@ public class LevelManager : MonoBehaviour
                 PlayerPrefs.Save();
             //////////////////CHECK IF ALL LEVELS COMPLETE IN BOTH MODES/////////////////////
             if (checkPref("IsLv1CompleteAcro") && checkPref("IsLv2CompleteAcro") && checkPref("IsLv3CompleteAcro") && checkPref("IsLv1CompleteSL") && checkPref("IsLv2CompleteSL") && checkPref("IsLv3CompleteSL"))
-                {
+            {
                     PlayerPrefs.SetInt("IsAllModesComplete", 1);
                     PlayerPrefs.Save();
             }
